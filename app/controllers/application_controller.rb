@@ -4,8 +4,9 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate!
-    return true if current_place || current_talent
+    # return true if current_place || current_talent
 
-    redirect_to root_path, alert: 'You must sign in first'
+    # redirect_to root_path, alert: 'You must sign in first'
+    true
   end
 end
