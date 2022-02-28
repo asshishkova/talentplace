@@ -1,0 +1,3 @@
+class TalentsController < ApplicationController
+
+end
