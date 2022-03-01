@@ -15,6 +15,11 @@
                 <div class="p-3 rounded-bottom d-flex flex-column">
                   <strong><%= place.title %> </strong>
                   <small class="text-muted"><%= place.address %></small>
+                  <small class="text-muted">
+                    <% place.genres.each do |genre| %>
+                      <span class="badge rounded-pill bg-light text-dark">#<%= genre.name %></span>
+                    <% end %>
+                  </small>
                 </div>
               </div>
             </a>

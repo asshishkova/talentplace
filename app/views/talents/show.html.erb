@@ -3,6 +3,10 @@
     <div class="flex-space-between">
       <div>
         <h2><%= @talent.name %></h2>
+        <% @talent.genres.each do |genre| %>
+          <span class="badge rounded-pill bg-dark">#<%= genre.name %></span>
+        <% end %>
+        <p>
         <p><%= @talent.address %></p>
         <p>$<%= @talent.price %> per hour</p>
         <p><%= @talent.description %></p>

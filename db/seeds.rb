@@ -1,6 +1,22 @@
 require 'faker'
 require "open-uri"
 
+puts 'Cleaning up TalentGenresDB'
+TalentGenre.destroy_all
+
+puts 'Cleaning up PlaceGenresDB'
+PlaceGenre.destroy_all
+
+puts 'Cleaning up GenreDB'
+Genre.destroy_all
+
+puts 'Creating Genres'
+genres = ['Blues', 'Jazz', 'Rock', 'Country', 'Soul', 'Dance', 'DJ', 'Classic', 'StandUp']
+genres.each do |genre|
+  Genre.create!(name: genre.downcase)
+end
+puts 'Genres are created'
+
 puts 'Cleaning up TalentDB'
 Talent.destroy_all
 
@@ -47,3 +63,17 @@ end
 puts 'Places are created'
 
 # Booking.create!(date: Date.today, user: User.first, offer: Offer.first, status: 'pending')
+
+
+puts 'Creating TalentGenres'
+Talent.all.each do |talent|
+  TalentGenre.create!(genre: Genre.all.sample, talent: talent)
+  TalentGenre.create!(genre: Genre.all.sample, talent: talent)
+end
+puts 'TalentGenres are created'
+
+puts 'Creating PlaceGenres'
+Place.all.each do |place|
+  PlaceGenre.create!(genre: Genre.all.sample, place: place)
+end
+puts 'PlaceGenres are created'
