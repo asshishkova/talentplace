@@ -7,7 +7,7 @@
     <div class="row my-2">
       <% @talents.each do |talent| %>
           <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
-            <a href= "talents/<%= talent.id %>" >
+            <%= link_to talent_path(talent) do %>
               <div class="bg-white rounded shadow h-100">
                 <% if talent.photo.key %>
                   <%= cl_image_tag talent.photo.key, class: "talent-img rounded-top" %>
@@ -22,7 +22,7 @@
                   <small class="text-muted">$<%= talent.price %> per hour</small>
                 </div>
               </div>
-            </a>
+            <% end %>
           </div>
       <% end %>
     </div>
