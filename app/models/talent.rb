@@ -7,5 +7,6 @@ class Talent < ApplicationRecord
   has_many :bookings
   has_many :promotions
   has_many :talent_genres
+  has_many :genres, through: :talent_genres
   has_one_attached :photo
 end

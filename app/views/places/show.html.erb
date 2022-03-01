@@ -4,6 +4,9 @@
       <div>
         <h2><%= @place.title %></h2>
         <p><%= @place.address %></p>
+        <% @place.genres.each do |genre| %>
+          <span class="badge rounded-pill bg-dark">#<%= genre.name %></span>
+        <% end %>
         <p><%= @place.description %></p>
       </div>
       <div>

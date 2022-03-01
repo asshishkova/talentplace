@@ -5,6 +5,7 @@ class Place < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :place_genres
+  has_many :genres, through: :place_genres
   has_many :promotions
   has_one_attached :photo
 end
