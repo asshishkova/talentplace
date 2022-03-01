@@ -1,0 +1,23 @@
+<div class="light-background">
+  <div class="container mt-5 mb-5 p-3"  >
+    <div class="flex-space-between">
+      <div>
+        <h2><%= @place.title %></h2>
+        <p><%= @place.address %></p>
+        <p><%= @place.description %></p>
+      </div>
+      <div>
+        <%= link_to "Book!", '#', class: "btn btn-flat" %>
+      </div>
+    </div>
+    <% if @place.photo.key %>
+      <p><%= cl_image_tag @place.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
+    <% end %>
+    <% website = "#{@place.website}" %>
+    <p>You can also see <%= @place.title%>'s <%= link_to 'website', website, target: "_blank"%></p>
+  <div class="flex-space-between container mt-5 mb-5">
+    <div>
+      <%= link_to 'Back to the list', places_path, class: "btn btn-gradisent" %>
+    </div>
+  </div>
+</div>
