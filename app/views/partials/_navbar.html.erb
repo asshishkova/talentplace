@@ -1,29 +1,32 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" />
-</a>
+    <div class = "navbar_WebApp_name">TalentPlace</div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home</a>
-          </li>
+        <% if talent_signed_in? %>
+          <%= render "partials/navbar_signed_in_talent" %>
+        <% elsif place_signed_in? %>
+          <%= render "partials/navbar_signed_in_place" %>
+        <% else %>
           <li class="nav-item">
-            <a class="nav-link" href="#">Messages</a>
-          </li>
-          <li class="nav-item dropdown">
-            <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
+            <%= link_to "Login", "#", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }%>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
+              <%= link_to "as a talent", new_talent_session_path, class: "dropdown-item" %>
+              <%= link_to "as a place", new_place_session_path, class: "dropdown-item" %>
             </div>
           </li>
-          <!--li class="nav-item"-->
-          <!--/li-->
+          <li class="nav-item">
+            <%= link_to "Sign Up", "#",  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }%>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "as a talent", new_talent_registration_path, class: "dropdown-item" %>
+              <%= link_to "as a place", new_place_registration_path, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
