@@ -8,4 +8,5 @@ class Talent < ApplicationRecord
   has_many :promotions
   has_many :talent_genres
   has_one_attached :photo
+
 end
