@@ -1,3 +1,7 @@
+<p>
+Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
+</p>
+
 <div class="container mt-5 mb-5">
   <div class="flex-space-between container mt-5 mb-5">
   <h1>All the talents</h1>
@@ -19,7 +23,8 @@
                       <span class="badge rounded-pill bg-light text-dark">#<%= genre.name %></span>
                     <% end %>
                   </small>
-                  <small class="text-muted">$<%= talent.price %> per hour</small>
+                  <small class="text-muted"><%= talent.address %></small>
+                  <small class="text-muted">$<%= talent.price %></small>
                 </div>
               </div>
             <% end %>
@@ -30,3 +35,8 @@
   <% if (@talents.length > 0) %>
     <%= link_to "Create a new talent", "#", class: "btn btn-ghost" %>
   <% end %>
+</div>
+
+<p>
+Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
+</p>

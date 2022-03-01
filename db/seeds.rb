@@ -10,70 +10,224 @@ PlaceGenre.destroy_all
 puts 'Cleaning up GenreDB'
 Genre.destroy_all
 
-puts 'Creating Genres'
-genres = ['Blues', 'Jazz', 'Rock', 'Country', 'Soul', 'Dance', 'DJ', 'Classic', 'StandUp']
-genres.each do |genre|
-  Genre.create!(name: genre.downcase)
-end
-puts 'Genres are created'
-
 puts 'Cleaning up TalentDB'
 Talent.destroy_all
-
-talent_photos = ['https://www.warble-entertainment.com/blog/wp-content/uploads/2019/10/How-much-do-musicians-cost.jpg', 'https://musicindustryhowtoimages.s3.amazonaws.com/wp-content/uploads/2019/09/24183938/become-musician.jpg', 'https://s18670.pcdn.co/wp-content/uploads/Famous-Musicians-for-Kids.jpg', 'https://www.royalnavy.mod.uk/-/media/careers-section-redesign/homepage/roles-and-specialisations/services/marines/musician/roledetail_videoposter_647x364-assets/647x364_musician.jpg?h=364&w=647&rev=0124080e27394453b053e23bb219b652&cropregion=&hash=997DFA126796BE9EB2DB4FA04EC6A8AA', 'https://www.music.northwestern.edu/sites/default/files/2018-07/hire_musician.jpg', 'https://smallbiztrends.com/ezoimgfmt/media.smallbiztrends.com/2017/03/shutterstock_402500896-850x476.jpg?ezimgfmt=ng%3Awebp%2Fngcb12%2Frs%3Adevice%2Frscb12-2', 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/A_musician_playing_violin_4.jpg/1280px-A_musician_playing_violin_4.jpg']
-
-5.times do |i|
-  new_talent = Talent.new(
-    name: Faker::Name.name,
-    email: "talent#{i}@talent.com",
-    password: '123456',
-    address: ["Afula", "Akko", "Arad", "Ariel", "Ashdod", "Ashkelon", "Baqa al-Gharbiyye", "Bat Yam", "Beer Sheva", "Beit Shean", "Beit Shemesh", "Betar Illit", "Bnei Berak", "Dimona", "Eilat", "Elad", "Givatayim", "Hadera", "Haifa", "Harish", "Herzliya", "Hod HaSharon", "Holon", "Jerusalem", "Karmiel", "Kfar Sava", "Kiryat Ata", "Kiryat Bialik", "Kiryat Gat", "Kiryat Malachi", "Kiryat Motzkin", "Kiryat Ono", "Kiryat Shemone", "Kiryat Yam", "Lod", "Maale Adumim", "Maalot Tarshiha", "Migdal HaEmek", "Modiin", "Nahariya", "Nazareth", "Nes Ziona", "Nesher", "Netanya", "Netivot", "Nof Hagalil", "Ofakim", "Or Akiva", "Or Yehuda", "Petah Tikva", "Qalansawe", "Raanana", "Rahat", "Ramat Hasharon", "Ramat-Gan", "Ramla", "Rehovot", "Rishon Lezion", "Rosh Ha'ayin", "Sakhnin", "Sderot", "Shefaram", "Taibeh", "Tamra", "Tel Aviv", "Tiberias", "Tira", "Tirat Carmel", "Tsfat (Safed)", "Umm al-Fahm", "Yavne", "Yehud-Monosson", "Yokneam"].sample,
-    price: 100 + i,
-    instagram_link: ['https://www.instagram.com/music.tlv/', 'https://www.instagram.com/applemusic/'].sample,
-    youtube_link: ['https://youtu.be/jpv2tMJJuz0', 'https://youtu.be/iceS6BvhuQ8', 'https://youtu.be/FjHGZj2IjBk'].sample,
-    spotify_link: 'https://open.spotify.com/playlist/37i9dQZF1DWSYF6geMtQMW',
-  )
-  new_talent.description = "Hi, my name is #{new_talent.name} I am a performing musician from #{new_talent.address}, I take part in about #{10 * i} shows a year, I can improve your place's atmospere with my nice music for $#{new_talent.price} per hour"
-  file = URI.open(talent_photos.sample)
-  new_talent.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  new_talent.save!
-  puts "#{new_talent.name} created"
-end
-puts 'Talents are created'
 
 puts 'Cleaning up PlaceDB'
 Place.destroy_all
 
-place_photos = ['https://media-cdn.tripadvisor.com/media/photo-s/1a/b8/46/6d/london-stock.jpg', 'https://upload.wikimedia.org/wikipedia/commons/e/ef/Restaurant_N%C3%A4sinneula.jpg', 'https://d3aux7tjp119y2.cloudfront.net/original_images/Tak2-CMSTemplate_IrMZHla.jpg', 'https://media-cdn.tripadvisor.com/media/photo-s/14/f9/eb/44/nuestra-barra-principal.jpg']
-
-5.times do |i|
-  new_place = Place.new(
-    title: Faker::Restaurant.name,
-    email: "place#{i}@place.com",
-    password: '123456',
-    address: ["Afula", "Akko", "Arad", "Ariel", "Ashdod", "Ashkelon", "Baqa al-Gharbiyye", "Bat Yam", "Beer Sheva", "Beit Shean", "Beit Shemesh", "Betar Illit", "Bnei Berak", "Dimona", "Eilat", "Elad", "Givatayim", "Hadera", "Haifa", "Harish", "Herzliya", "Hod HaSharon", "Holon", "Jerusalem", "Karmiel", "Kfar Sava", "Kiryat Ata", "Kiryat Bialik", "Kiryat Gat", "Kiryat Malachi", "Kiryat Motzkin", "Kiryat Ono", "Kiryat Shemone", "Kiryat Yam", "Lod", "Maale Adumim", "Maalot Tarshiha", "Migdal HaEmek", "Modiin", "Nahariya", "Nazareth", "Nes Ziona", "Nesher", "Netanya", "Netivot", "Nof Hagalil", "Ofakim", "Or Akiva", "Or Yehuda", "Petah Tikva", "Qalansawe", "Raanana", "Rahat", "Ramat Hasharon", "Ramat-Gan", "Ramla", "Rehovot", "Rishon Lezion", "Rosh Ha'ayin", "Sakhnin", "Sderot", "Shefaram", "Taibeh", "Tamra", "Tel Aviv", "Tiberias", "Tira", "Tirat Carmel", "Tsfat (Safed)", "Umm al-Fahm", "Yavne", "Yehud-Monosson", "Yokneam"].sample,
-  )
-  new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
-  new_place.description = "Hi, we are a cute restaurant '#{new_place.title}', located in the middle of #{new_place.address}. Looking for a talent to make our guests happy!"
-  file = URI.open(place_photos.sample)
-  new_place.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-  new_place.save!
-  puts "#{new_place.title} created"
+puts 'Creating Genres'
+genres = ['blues', 'jazz', 'rock', 'country', 'dance', 'DJ', 'classic', 'StandUp', 'piano', 'violin', 'guitar', 'covers']
+genres.each do |genre|
+  Genre.create!(name: genre)
 end
-puts 'Places are created'
+puts 'Genres are created'
+
+new_talent = Talent.new(
+  name: 'Matthew Chandler',
+  email: 'talent1@talent.com',
+  password: '123456',
+  address: 'Bat Yam',
+  price: 120,
+  instagram_link: 'https://www.instagram.com/guitar_reels/',
+  youtube_link: 'https://youtu.be/2CkB4a0A7cQ',
+  spotify_link: 'https://open.spotify.com/artist/0oBiYchunKTMDesVICwrvL'
+)
+new_talent.description = "Hello, my name is #{new_talent.name} I am a performing musician from #{new_talent.address}, I take part in about 50 shows a year, I can improve your place's atmospere with my nice music for $#{new_talent.price} per hour."
+file = URI.open('https://www.warble-entertainment.com/blog/wp-content/uploads/2019/10/How-much-do-musicians-cost.jpg')
+new_talent.photo.attach(io: file, filename: 'Matthew.png', content_type: 'image/png')
+new_talent.save!
+puts "#{new_talent.name} created"
+
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'guitar'))
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'country'))
+
+puts "TalentGenres for #{new_talent.name} created"
+
+new_talent = Talent.new(
+  name: 'Bob Walker',
+  email: 'talent2@talent.com',
+  password: '123456',
+  address: 'Ashdod',
+  price: 90,
+  instagram_link: 'https://www.instagram.com/khomenko.tv/',
+  youtube_link: 'https://youtu.be/qm5FsgKDyQo',
+  spotify_link: 'https://open.spotify.com/artist/05yMo6qbw9tAIRbIfi1tVn'
+)
+new_talent.description = "Hi, I am #{new_talent.name} from #{new_talent.address}, I take part in about 20 shows a year, I can improve your place's atmospere for $#{new_talent.price} per hour."
+file = URI.open('https://musicindustryhowtoimages.s3.amazonaws.com/wp-content/uploads/2019/09/24183938/become-musician.jpg')
+new_talent.photo.attach(io: file, filename: 'musicindustryhowtoimages.png', content_type: 'image/png')
+new_talent.save!
+puts "#{new_talent.name} created"
+
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'guitar'))
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'rock'))
+
+puts "TalentGenres for #{new_talent.name} created"
+
+new_talent = Talent.new(
+  name: 'Mary Becker',
+  email: 'talent3@talent.com',
+  password: '123456',
+  address: 'Ramat-Gan',
+  price: 150,
+  instagram_link: 'https://www.instagram.com/violin.virtuoso/',
+  youtube_link: 'https://youtu.be/iEBX_ouEw1I',
+  spotify_link: 'https://open.spotify.com/artist/5JdT0LYJdlPbTC58p60WTX'
+)
+new_talent.description = "Hello, I am #{new_talent.name} from #{new_talent.address}, I take part in about 70 shows a year, I can improve your place's atmospere for $#{new_talent.price} per hour."
+file = URI.open('https://www.royalnavy.mod.uk/-/media/careers-section-redesign/homepage/roles-and-specialisations/services/marines/musician/roledetail_videoposter_647x364-assets/647x364_musician.jpg?h=364&w=647&rev=0124080e27394453b053e23bb219b652&cropregion=&hash=997DFA126796BE9EB2DB4FA04EC6A8AA')
+new_talent.photo.attach(io: file, filename: 'Mary.png', content_type: 'image/png')
+new_talent.save!
+puts "#{new_talent.name} created"
+
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'classic'))
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'violin'))
+
+puts "TalentGenres for #{new_talent.name} created"
+
+
+new_talent = Talent.new(
+  name: 'Quadro Breeze',
+  email: 'talent4@talent.com',
+  password: '123456',
+  address: 'Tel Aviv',
+  price: 400,
+  instagram_link: 'https://www.instagram.com/violin.virtuoso/',
+  youtube_link: 'https://youtu.be/E4w_5bY0tBY',
+  spotify_link: 'https://open.spotify.com/playlist/4RkDMdAFmxTp2E9FsMRq0R'
+)
+new_talent.description = "Hello, we are #{new_talent.name}, we are from #{new_talent.address}, we take part in about 20 shows a year, we can improve your place's atmospere with our nice classical music for $#{new_talent.price} per hour."
+file = URI.open('https://www.music.northwestern.edu/sites/default/files/2018-07/hire_musician.jpg')
+new_talent.photo.attach(io: file, filename: 'music.northwesterns.png', content_type: 'image/png')
+new_talent.save!
+puts "#{new_talent.name} created"
+
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'classic'))
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'violin'))
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'covers'))
+
+puts "TalentGenres for #{new_talent.name} created"
+
+new_talent = Talent.new(
+  name: 'DJ Walter',
+  email: 'talent5@talent.com',
+  password: '123456',
+  address: 'Tel Aviv',
+  price: 200,
+  instagram_link: 'https://www.instagram.com/_piano_music_/',
+  youtube_link: 'https://youtu.be/Cz3F_25ajgw',
+  spotify_link: 'https://open.spotify.com/artist/5vpWEdK9C28uOX8jjfRi1v'
+)
+new_talent.description = "Hello, I am #{new_talent.name} from #{new_talent.address}, I take part in about 200 shows a year, I can improve your place's atmospere for $#{new_talent.price} per hour."
+file = URI.open('https://smallbiztrends.com/ezoimgfmt/media.smallbiztrends.com/2017/03/shutterstock_402500896-850x476.jpg?ezimgfmt=ng%3Awebp%2Fngcb12%2Frs%3Adevice%2Frscb12-2')
+new_talent.photo.attach(io: file, filename: 'shutterstock.png', content_type: 'image/png')
+new_talent.save!
+puts "#{new_talent.name} created"
+
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'DJ'))
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'piano'))
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'covers'))
+
+puts "TalentGenres for #{new_talent.name} created"
+
+new_talent = Talent.new(
+  name: 'Pablo Campbell',
+  email: 'talent6@talent.com',
+  password: '123456',
+  address: 'Holon',
+  price: 180,
+  instagram_link: 'https://www.instagram.com/violin.virtuoso/',
+  youtube_link: 'https://youtu.be/9e0Tuvitkgs',
+  spotify_link: 'https://open.spotify.com/playlist/7DV0Aj6AN1vPVePAjaqhiJ'
+)
+new_talent.description = "Hello, I am #{new_talent.name} from #{new_talent.address}, I take part in about 30 shows a year, I can improve your place's atmospere"
+file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/A_musician_playing_violin_4.jpg/1280px-A_musician_playing_violin_4.jpg')
+new_talent.photo.attach(io: file, filename: 'wikimedia.png', content_type: 'image/png')
+new_talent.save!
+puts "#{new_talent.name} created"
+
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'violin'))
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'covers'))
+
+puts "TalentGenres for #{new_talent.name} created"
+
+puts 'Talents are created'
+
+place_photos = ['', '', '']
+
+new_place = Place.new(
+  title: 'Wine Tower',
+  email: "place1@place.com",
+  password: '123456',
+  address: 'Tel Aviv'
+)
+new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
+new_place.description = "Hi, we are a cute restaurant '#{new_place.title}', located in the middle of #{new_place.address}. Looking for a talent to make our guests happy!"
+file = URI.open('https://upload.wikimedia.org/wikipedia/commons/e/ef/Restaurant_N%C3%A4sinneula.jpg')
+new_place.photo.attach(io: file, filename: 'media-cdn.png', content_type: 'image/png')
+new_place.save!
+puts "#{new_place.title} created"
+
+PlaceGenre.create!(place: new_place, genre: Genre.find_by(name: 'classic'))
+
+puts "PlaceGenre for #{new_place.title} created"
+
+new_place = Place.new(
+  title: 'Good Mood',
+  email: "place2@place.com",
+  password: '123456',
+  address: 'Ramat-Gan'
+)
+new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
+new_place.description = "Hi, we are '#{new_place.title}', located in the middle of #{new_place.address}. Looking for a talent to make our guests happy!"
+file = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/1a/b8/46/6d/london-stock.jpg')
+new_place.photo.attach(io: file, filename: 'media-cdn.png', content_type: 'image/png')
+new_place.save!
+puts "#{new_place.title} created"
+
+PlaceGenre.create!(place: new_place, genre: Genre.find_by(name: 'classic'))
+PlaceGenre.create!(place: new_place, genre: Genre.find_by(name: 'country'))
+
+puts "PlaceGenre for #{new_place.title} created"
+
+new_place = Place.new(
+  title: 'Villa 7',
+  email: "place3@place.com",
+  password: '123456',
+  address: 'Bat Yam'
+)
+new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
+new_place.description = "Hi, we are a cute restaurant '#{new_place.title}', located in the middle of #{new_place.address}. Looking for a talent to make our guests happy!"
+file = URI.open('https://d3aux7tjp119y2.cloudfront.net/original_images/Tak2-CMSTemplate_IrMZHla.jpg')
+new_place.photo.attach(io: file, filename: 'd3aux7tjp119y2.png', content_type: 'image/png')
+new_place.save!
+puts "#{new_place.title} created"
+
+PlaceGenre.create!(place: new_place, genre: Genre.find_by(name: 'dance'))
+PlaceGenre.create!(place: new_place, genre: Genre.find_by(name: 'country'))
+
+puts "PlaceGenre for #{new_place.title} created"
+
+new_place = Place.new(
+  title: 'Bar #1',
+  email: "place4@place.com",
+  password: '123456',
+  address: 'Tel Aviv'
+)
+new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
+new_place.description = "Hi, we are '#{new_place.title}', located in the middle of #{new_place.address}. Looking for a talent to make our guests happy!"
+file = URI.open('https://www.beachstonecafe.com.au/wp-content/uploads/2022/01/pic-348.jpg')
+new_place.photo.attach(io: file, filename: 'd3aux7tjp119y2.png', content_type: 'image/png')
+new_place.save!
+puts "#{new_place.title} created"
+
+PlaceGenre.create!(place: new_place, genre: Genre.find_by(name: 'dance'))
+PlaceGenre.create!(place: new_place, genre: Genre.find_by(name: 'DJ'))
+
+puts "PlaceGenre for #{new_place.title} created"
 
 # Booking.create!(date: Date.today, user: User.first, offer: Offer.first, status: 'pending')
 
 
-puts 'Creating TalentGenres'
-Talent.all.each do |talent|
-  TalentGenre.create!(genre: Genre.all.sample, talent: talent)
-  TalentGenre.create!(genre: Genre.all.sample, talent: talent)
-end
-puts 'TalentGenres are created'
-
-puts 'Creating PlaceGenres'
-Place.all.each do |place|
-  PlaceGenre.create!(genre: Genre.all.sample, place: place)
-end
-puts 'PlaceGenres are created'
+# puts 'PlaceGenres are created'

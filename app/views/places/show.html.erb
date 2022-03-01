@@ -1,3 +1,7 @@
+<p>
+Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
+</p>
+
 <div class="light-background">
   <div class="container mt-5 mb-5 p-3"  >
     <div class="flex-space-between">
@@ -17,10 +21,14 @@
       <p><%= cl_image_tag @place.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
     <% end %>
     <% website = "#{@place.website}" %>
-    <p>You can also see <%= @place.title%>'s <%= link_to 'website', website, target: "_blank"%></p>
+    <p>You can also see <%= link_to 'our website', website, target: "_blank"%></p>
   <div class="flex-space-between container mt-5 mb-5">
     <div>
       <%= link_to 'Back to the list', places_path, class: "btn btn-gradisent" %>
     </div>
   </div>
 </div>
+
+<p>
+Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
+</p>
