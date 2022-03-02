@@ -16,7 +16,7 @@ Please note that the data on this page is not real, it is used to demonstrate th
         <p><%= @talent.description %></p>
       </div>
       <div>
-        <%= link_to "Book!", '#', class: "btn btn-flat" %>
+        <%= link_to "Book!", bookings_path(@talent), class: "btn btn-flat" %>
       </div>
     </div>
     <% if @talent.photo.key %>
