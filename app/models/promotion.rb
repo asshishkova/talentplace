@@ -1,4 +1,4 @@
 class Promotion < ApplicationRecord
-  belongs_to :place
-  belongs_to :talent
+  belongs_to :place, dependent: :destroy
+  belongs_to :talent, dependent: :destroy
 end

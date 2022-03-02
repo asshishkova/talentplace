@@ -9,5 +9,4 @@ class Talent < ApplicationRecord
   has_many :talent_genres
   has_many :genres, through: :talent_genres
   has_one_attached :photo
-
 end

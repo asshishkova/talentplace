@@ -4,9 +4,12 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate!
-    # return true if current_place || current_talent
+    return true if skip_login?
 
-    # redirect_to root_path, alert: 'You must sign in first'
-    true
+    redirect_to login_path, alert: 'Please sign in first'
+  end
+
+  def skip_login?
+    current_place || current_talent || devise_controller?
   end
 end
