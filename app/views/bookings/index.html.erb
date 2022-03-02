@@ -1,0 +1,20 @@
+<h1>Bookings for all the Talents</h1>
+<% talents = Talent.all %>
+<% talents.each do |talent|%>
+  <p> Bookings for <%=  talent.name  %> </p>
+    <ul>
+      <% talent.bookings.each do |booking|%>
+        <li> <%=  booking.place.title  %> - <%=  booking.date  %> - <%=  booking.message  %> - <%=  booking.status  %> </li>
+      <% end %>
+    </ul>
+<% end %>
+<h1>Bookings for all the Talents</h1>
+<% places = Place.all %>
+<% places.each do |place|%>
+  <p> Bookings from <%=  place.title  %> </p>
+    <ul>
+      <% place.bookings.each do |booking|%>
+        <li> <%=  booking.talent.name  %> - <%=  booking.date  %> - <%=  booking.status  %> </li>
+      <% end %>
+    </ul>
+<% end %>
