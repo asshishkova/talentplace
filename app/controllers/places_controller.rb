@@ -20,6 +20,6 @@ end
 
 private
 
-def talent_params
+def place_params
   params.require(:place).permit(:title, :address, :website, :description, :photo, :email)
 end
