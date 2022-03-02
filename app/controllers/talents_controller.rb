@@ -20,5 +20,5 @@ end
 private
 
 def talent_params
-  params.require(:talent).permit(:name, :description, :address, :youtube_link, :instagram_link, :spotify_link, :price)
+  params.require(:talent).permit(:name, :description, :address, :youtube_link, :instagram_link, :spotify_link, :price, :photo)
 end
