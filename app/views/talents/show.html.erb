@@ -22,7 +22,8 @@ Please note that the data on this page is not real, it is used to demonstrate th
     <% if @talent.photo.key %>
       <p><%= cl_image_tag @talent.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
     <% end %>
-    <% youtube_link = "https://www.youtube.com/embed/#{@talent.youtube_link.gsub(/https:\/\/youtu.be\/(.+)/, '\1')}" %>
+    <% regexp = (@talent.youtube_link.include? "youtu.be") ? 'https:\/\/youtu.be\/(.+)' : 'https:\/\/www\.youtube\.com\/watch\?v=(.+)&ab_channel=.+' %>
+    <% youtube_link = "https://www.youtube.com/embed/#{@talent.youtube_link.gsub(/#{regexp}/, '\1')}" %>
     <% instagram_link = "#{@talent.instagram_link}" %>
     <% spotify_link = "#{@talent.spotify_link}" %>
     <div>
