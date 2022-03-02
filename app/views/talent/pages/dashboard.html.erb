@@ -1,0 +1,19 @@
+<h1><%= @message %></h1>
+
+<%= current_talent %>
+
+<div class="dashboard_talent_container">
+  <div class = "dashboard_talent_section_1">
+    <div class = "profil_pic_dashboard_talent">
+      <% if @talent.photo.key %>
+      <p><%= cl_image_tag @talent.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class = "dashboard_talent_section_1">
+  </div>
+
+  <div class = "dashboard_talent_section_1">
+  </div>
+</div>
