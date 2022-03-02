@@ -1,19 +1,42 @@
-<h1><%= @message %></h1>
-
-<%= current_talent %>
-
 <div class="dashboard_talent_container">
   <div class = "dashboard_talent_section_1">
     <div class = "profil_pic_dashboard_talent">
-      <% if @talent.photo.key %>
-      <p><%= cl_image_tag @talent.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
+      <% if current_talent.photo.key %>
+        <p><%= cl_image_tag current_talent.photo.key, class: "img-fluid " %></p>
       <% end %>
+    </div>
+    <div class="dashboard_talent_info">
+      <p><%= current_talent.name  %></p>
+      <p><%= current_talent.description  %></p>
+      <p><%= current_talent.price  %></p>
+      <div class="dashboard_talent_btn_top">
+        <div>
+        <button class = "btn btn-warning"><%= link_to 'view my profil', talent_path(current_talent) %></button>
+        </div>
+        <div>
+        <button class = "btn btn-danger"><%= link_to 'edit my profil', edit_talent_path(current_talent) %></button>
+        </div>
+      </div>
+    </div>
+    <div class = "dashboard_talent_find_place">
+      <button class = "btn btn-dark"><%= link_to 'Find a place to play ! ', places_path %></button>
     </div>
   </div>
 
-  <div class = "dashboard_talent_section_1">
+
+
+
+<br><br><br>
+
+  <div class = "dashboard_talent_section_2">
+    <h2>My Bookings</h2>
+    <div class="dashboard_talent_booking_rows">
+      <div class="row">
+
+      </div>
+    </div>
   </div>
 
-  <div class = "dashboard_talent_section_1">
+  <div class = "dashboard_talent_section_3">
   </div>
 </div>

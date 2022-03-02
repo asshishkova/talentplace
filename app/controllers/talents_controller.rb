@@ -2,6 +2,7 @@ class TalentsController < ApplicationController
   def index
     @talents = Talent.all
   end
+
   def show
     @talent = Talent.find(params[:id])
   end
@@ -17,8 +18,9 @@ class TalentsController < ApplicationController
   end
 end
 
+
 private
 
 def talent_params
-  params.require(:talent).permit(:name, :description, :address, :youtube_link, :instagram_link, :spotify_link, :price)
+  params.require(:talent).permit(:name, :description, :address, :youtube_link, :instagram_link, :spotify_link, :price, :photo)
 end

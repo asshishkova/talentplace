@@ -8,6 +8,8 @@
         <%= f.label 'name:' %><br>
         <%= f.text_field :name, class: "edit_talent_label_style" %><br>
 
+         <%= f.input :photo, as: :file %>
+
       <div class="">
         <%= f.label 'price:'%><br>
         <%= f.text_field :price, class: "edit_talent_label_style" %><br>
@@ -37,6 +39,7 @@
         <%= f.label "spotify link:" %><br>
         <%= f.text_field :spotify_link, class: "edit_talent_label_style" %><br>
       </div>
+
 
         <%= f.submit "Submit" %>
       <% end %>

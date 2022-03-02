@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :bookings, only: %i[new create]
   end
 
-  resources :places, only: %i[index show]
+  resources :places, only: %i[index show edit update]
 
   namespace :talent do
     get "dashboard", to: "pages#dashboard"
