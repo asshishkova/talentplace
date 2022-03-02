@@ -2,9 +2,13 @@ Rails.application.routes.draw do
   devise_for :talents
   devise_for :places
   root to: 'pages#home'
+
+  get 'login', to: 'pages#login', as: 'login'
+
   resources :talents, only: %i[index show edit update] do
     resources :bookings, only: %i[new create]
   end
+
   resources :places, only: %i[index show]
 
   namespace :talent do
