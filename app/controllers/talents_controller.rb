@@ -18,6 +18,7 @@ class TalentsController < ApplicationController
   end
 end
 
+
 private
 
 def talent_params

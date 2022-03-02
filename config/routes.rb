@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :talents, only: %i[index show edit update]
   resources :places, only: %i[index show edit update]
 
+
   namespace :talent do
     get "dashboard", to: "pages#dashboard"
   end
