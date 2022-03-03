@@ -1,6 +1,6 @@
-<p>
+<small class="text-muted">
 Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</p>
+</small>
 
 <div class="light-background">
   <div class="container mt-5 mb-5 p-3"  >
@@ -15,9 +15,11 @@ Please note that the data on this page is not real, it is used to demonstrate th
         <p>$<%= @talent.price %> per hour</p>
         <p><%= @talent.description %></p>
       </div>
-      <div>
-        <%= link_to "Book!", new_talent_booking_path(@talent), class: "btn btn-flat" %>
-      </div>
+      <% if current_place %>
+        <div>
+          <%= link_to "Book!", new_talent_booking_path(@talent), class: "btn btn-flat" %>
+        </div>
+      <% end %>
     </div>
     <% if @talent.photo.key %>
       <p><%= cl_image_tag @talent.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
@@ -37,6 +39,6 @@ Please note that the data on this page is not real, it is used to demonstrate th
   </div>
 </div>
 
-<p>
+<small class="text-muted">
 Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</p>
+</small>

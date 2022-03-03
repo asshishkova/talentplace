@@ -1,1 +1,6 @@
-<%= render 'form', talent: @talent, booking: @booking %>
+<% if current_place %>
+  <%= render 'form', talent: @talent, booking: @booking %>
+<% else %>
+  <p>This page is not available</p>
+  <%= link_to "Back to the homepage", root_path, class: "btn btn-flat" %>
+<% end %>
