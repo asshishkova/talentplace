@@ -1,1 +1,42 @@
 // Specific CSS for your home-page
+.home-banner{
+    // background-image: url('https://media.istockphoto.com/photos/concert-stage-on-rock-festival-music-instruments-silhouettes-picture-id1199243596?s=612x612');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+    margin-bottom: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cards-home {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: 2px;
+    margin: 10px;
+    width: 100%;
+  }
+
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+  }
+
+  .card-home-body {
+    box-shadow: 1px 1px 1px 1px grey;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+  }
