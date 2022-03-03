@@ -29,13 +29,13 @@
 <br><br><br>
 
   <div class = "dashboard_talent_section_2">
-    <h2>My Bookings</h2>
+    <h2>My Bookings i receive</h2>
     <div class="dashboard_talent_booking_rows">
       <div class="row">
-        <% talent.bookings.each do |booking|%>
-          <p><%= booking.place_id %></p>
+        <% @bookings.each do |booking|%>
+
           <p><%= booking.date %></p>
-          <p><%= place.title %></p>
+          <p><%= booking.place.title %></p>
         <% end %>
       </div>
     </div>
