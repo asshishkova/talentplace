@@ -32,7 +32,11 @@
     <h2>My Bookings</h2>
     <div class="dashboard_talent_booking_rows">
       <div class="row">
-
+        <% talent.bookings.each do |booking|%>
+          <p><%= booking.place_id %></p>
+          <p><%= booking.date %></p>
+          <p><%= place.title %></p>
+        <% end %>
       </div>
     </div>
   </div>
