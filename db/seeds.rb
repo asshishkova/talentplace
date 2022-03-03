@@ -7,6 +7,9 @@ TalentGenre.destroy_all
 puts 'Cleaning up PlaceGenresDB'
 PlaceGenre.destroy_all
 
+puts 'Cleaning up BookingDB'
+Booking.destroy_all
+
 puts 'Cleaning up GenreDB'
 Genre.destroy_all
 
@@ -224,9 +227,6 @@ PlaceGenre.create!(place: new_place, genre: Genre.find_by(name: 'DJ'))
 
 puts "PlaceGenre for #{new_place.title} created"
 
-puts 'Cleaning up BookingDB'
-
-Booking.destroy_all
 Booking.create!(
   place: Place.find_by(title: 'Wine Tower'),
   talent: Talent.find_by(name: 'Mary Becker'),
