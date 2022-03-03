@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     get "dashboard", to: "pages#dashboard"
   end
 
+  namespace :place do
+    get "dashboard", to: "pages#dashboard"
+  end
+
   resources :bookings, only: :index # this route is for checking only
 
 end
