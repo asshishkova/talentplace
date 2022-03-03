@@ -1,45 +1,46 @@
-<% if current_talent %>
-  <div class="dashboard_talent_container">
-    <div class = "dashboard_talent_section_1">
-      <div class = "profil_pic_dashboard_talent">
-        <% if current_talent.photo.key %>
-          <p><%= cl_image_tag current_talent.photo.key, class: "img-fluid " %></p>
-        <% end %>
-      </div>
-      <div class="dashboard_talent_info">
-        <p><%= current_talent.name  %></p>
-        <p><%= current_talent.description  %></p>
-        <p><%= current_talent.price  %></p>
-        <div class="dashboard_talent_btn_top">
-          <div>
-          <button class = "btn btn-warning"><%= link_to 'view my profil', talent_path(current_talent) %></button>
-          </div>
-          <div>
-          <button class = "btn btn-danger"><%= link_to 'edit my profil', edit_talent_path(current_talent) %></button>
-          </div>
-        </div>
-      </div>
-      <div class = "dashboard_talent_find_place">
-        <button class = "btn btn-dark"><%= link_to 'Find a place to play ! ', places_path %></button>
-      </div>
+<div class="dashboard_talent_container">
+  <div class = "dashboard_talent_section_1">
+    <div class = "profil_pic_dashboard_talent">
+      <% if current_talent.photo.key %>
+        <p><%= cl_image_tag current_talent.photo.key, class: "img-fluid " %></p>
+      <% end %>
     </div>
-
-  <br><br><br>
-
-    <div class = "dashboard_talent_section_2">
-      <h2>My Bookings</h2>
-      <div class="dashboard_talent_booking_rows">
-        <div class="row">
-
+    <div class="dashboard_talent_info">
+      <p><%= current_talent.name  %></p>
+      <p><%= current_talent.description  %></p>
+      <p><%= current_talent.price  %></p>
+      <div class="dashboard_talent_btn_top">
+        <div>
+        <button class = "btn btn-warning"><%= link_to 'view my profil', talent_path(current_talent) %></button>
+        </div>
+        <div>
+        <button class = "btn btn-danger"><%= link_to 'edit my profil', edit_talent_path(current_talent) %></button>
         </div>
       </div>
     </div>
-
-    <div class = "dashboard_talent_section_3">
+    <div class = "dashboard_talent_find_place">
+      <button class = "btn btn-dark"><%= link_to 'Find a place to play ! ', places_path %></button>
     </div>
   </div>
 
-<% else %>
-  <p>This page is not available</p>
-  <%= link_to "Back to the homepage", root_path, class: "btn btn-flat" %>
-<% end %>
+
+
+
+<br><br><br>
+
+  <div class = "dashboard_talent_section_2">
+    <h2>Bookings I received</h2>
+    <div class="dashboard_talent_booking_rows">
+      <div class="row">
+        <% @bookings.each do |booking|%>
+
+          <p><%= booking.date %></p>
+          <p><%= booking.place.title %></p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class = "dashboard_talent_section_3">
+  </div>
+</div>
