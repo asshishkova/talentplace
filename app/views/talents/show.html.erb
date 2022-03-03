@@ -1,6 +1,6 @@
-<p>
+<small class="text-muted">
 Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</p>
+</small>
 
 <div class="light-background">
   <div class="container mt-5 mb-5 p-3"  >
@@ -15,14 +15,17 @@ Please note that the data on this page is not real, it is used to demonstrate th
         <p>$<%= @talent.price %> per hour</p>
         <p><%= @talent.description %></p>
       </div>
-      <div>
-        <%= link_to "Book!", '#', class: "btn btn-flat" %>
-      </div>
+      <% if current_place %>
+        <div>
+          <%= link_to "Book!", new_talent_booking_path(@talent), class: "btn btn-flat" %>
+        </div>
+      <% end %>
     </div>
     <% if @talent.photo.key %>
       <p><%= cl_image_tag @talent.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
     <% end %>
-    <% youtube_link = "https://www.youtube.com/embed/#{@talent.youtube_link.gsub(/https:\/\/youtu.be\/(.+)/, '\1')}" %>
+    <% regexp = (@talent.youtube_link.include? "youtu.be") ? 'https:\/\/youtu.be\/(.+)' : 'https:\/\/www\.youtube\.com\/watch\?v=(.+)&ab_channel=.+' %>
+    <% youtube_link = "https://www.youtube.com/embed/#{@talent.youtube_link.gsub(/#{regexp}/, '\1')}" %>
     <% instagram_link = "#{@talent.instagram_link}" %>
     <% spotify_link = "#{@talent.spotify_link}" %>
     <div>
@@ -36,6 +39,6 @@ Please note that the data on this page is not real, it is used to demonstrate th
   </div>
 </div>
 
-<p>
+<small class="text-muted">
 Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</p>
+</small>
