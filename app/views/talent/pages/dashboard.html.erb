@@ -29,13 +29,16 @@
 <br><br><br>
 
   <div class = "dashboard_talent_section_2">
-    <h2>My Bookings i receive</h2>
+    <h2>Bookings I received</h2>
     <div class="dashboard_talent_booking_rows">
-      <div class="row">
+      <div class="row justify-content-center">
         <% @bookings.each do |booking|%>
-
-          <p><%= booking.date %></p>
+        <div class="dashboard_talent_row_booking">
           <p><%= booking.place.title %></p>
+          <p><%= booking.date %></p>
+          <button class = "btn btn-primary">confirm</button>
+          <button class = "btn btn-primary">decline</button>
+        </div>
         <% end %>
       </div>
     </div>

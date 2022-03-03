@@ -8,6 +8,10 @@
   justify-content: space-between;
 }
 
+.dashboard_talent_section_2 {
+
+}
+
 .profil_pic_dashboard_talent {
   width: 350px;
   padding-left: 30px;
@@ -25,4 +29,12 @@
 
 .dashboard_talent_find_place {
   padding-right: 10px;
+}
+
+.dashboard_talent_row_booking {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 800px;
+  padding: auto;
 }
