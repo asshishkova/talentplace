@@ -1,7 +1,6 @@
 // Specific CSS for your home-page
-.carousel-inner {
-  /* \ */
-    background-image: url('https://media.istockphoto.com/photos/concert-stage-on-rock-festival-music-instruments-silhouettes-picture-id1199243596?s=612x612');
+.home-banner{
+    // background-image: url('https://media.istockphoto.com/photos/concert-stage-on-rock-festival-music-instruments-silhouettes-picture-id1199243596?s=612x612');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -11,23 +10,33 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
   }
 
-  .card {
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cards-home {
     position: relative;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
     min-width: 0;
     word-wrap: break-word;
-    background-color: #fff;
     background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, 0.125);
     border-radius: 2px;
     margin: 10px;
-    width: 50%;
+    width: 100%;
   }
 
   .card-img-top {
     height: 250px;
     object-fit: cover;
+  }
+
+  .card-home-body {
+    box-shadow: 1px 1px 1px 1px grey;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
   }

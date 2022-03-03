@@ -1,23 +1,25 @@
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://media.istockphoto.com/photos/concert-stage-on-rock-festival-music-instruments-silhouettes-picture-id1199243596?s=612x612" alt="Second slide">
-    </div>
-  </div>
+<div class="home-banner">
+    <img class="banner-image" src="https://images.unsplash.com/photo-1543171619-26386da8f3e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80" alt="Banner">
 </div>
 
-<div class="card" style="width: 18rem;">
-  <img src="https://media.istockphoto.com/photos/empty-wooden-bar-counter-picture-id624494724?s=612x612" class="card-img-top" alt="places-img">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+<div class="card-container">
+  <div class="cards-home">
+    <div class="card-home-body">
+      <img src="https://media.istockphoto.com/photos/empty-wooden-bar-counter-picture-id624494724?s=612x612" class="card-img-top" alt="places-img">
+      <h5 class="card-title">You want to express your talent in public ?</h5>
+      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <button class="btn btn-primary">
+        <%= link_to 'find a place to play', places_path %>
+      </button>
+    </div>
 
-  <img src="https://media.istockphoto.com/photos/mixed-race-woman-singing-and-playing-guitar-picture-id1125877063?s=612x612" class="card-img-top" alt="talent-img">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <div class="card-home-body">
+      <img src="https://media.istockphoto.com/photos/mixed-race-woman-singing-and-playing-guitar-picture-id1125877063?s=612x612" class="card-img-top" alt="talent-img">
+      <h5 class="card-title">Looking for musician to improve your place ?</h5>
+    <!--  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+      <button class="btn btn-primary">
+        <%= link_to 'find your talent!', talents_path %>
+      </button>
+    </div>
   </div>
 </div>
