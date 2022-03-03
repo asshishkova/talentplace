@@ -1,6 +1,6 @@
-<p>
+<small class="text-muted">
 Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</p>
+</small>
 
 <div class="light-background">
   <div class="container mt-5 mb-5 p-3"  >
@@ -13,9 +13,11 @@ Please note that the data on this page is not real, it is used to demonstrate th
         <% end %>
         <p><%= @place.description %></p>
       </div>
-      <div>
-        <%= link_to "Book!", '#', class: "btn btn-flat" %>
-      </div>
+      <% if current_talent %>
+        <div>
+          <%= link_to "Send a promotion!", '#', class: "btn btn-flat" %>
+        </div>
+      <% end %>
     </div>
     <% if @place.photo.key %>
       <p><%= cl_image_tag @place.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
@@ -29,6 +31,6 @@ Please note that the data on this page is not real, it is used to demonstrate th
   </div>
 </div>
 
-<p>
+<small class="text-muted">
 Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</p>
+</small>
