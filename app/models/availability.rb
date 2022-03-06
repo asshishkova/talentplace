@@ -1,3 +1,3 @@
 class Availability < ApplicationRecord
-  belongs_to :talent, dependent: :destroy
+  belongs_to :talent
 end
