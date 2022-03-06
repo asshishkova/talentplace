@@ -11,13 +11,13 @@ Please note that the data on this page is not real, it is used to demonstrate th
           <span class="badge rounded-pill bg-dark">#<%= genre.name %></span>
         <% end %>
         <p>
-        <p><%= @talent.address %></p>
+        <p> <i class="fas fa-map-marker-alt"></i> <%= @talent.address %></p>
         <p>$<%= @talent.price %> per hour</p>
         <p><%= @talent.description %></p>
       </div>
       <% if current_place %>
         <div>
-          <%= link_to "Book!", new_talent_booking_path(@talent), class: "btn btn-flat" %>
+          <%= link_to "Book!", new_talent_booking_path(@talent), class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>
@@ -34,7 +34,7 @@ Please note that the data on this page is not real, it is used to demonstrate th
     <p>You can also see <%= @talent.name%>'s <%= link_to 'instagram', instagram_link, target: "_blank"%> and <%= link_to 'spotify', spotify_link, target: "_blank"%> pages.</p>
   <div class="flex-space-between container mt-5 mb-5">
     <div>
-      <%= link_to 'Back to the list', talents_path, class: "btn btn-gradient" %>
+      <%= link_to 'To the list of all the talents', talents_path, class: "btn btn-ghost" %>
     </div>
   </div>
 </div>
