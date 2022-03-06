@@ -15,7 +15,7 @@ Please note that the data on this page is not real, it is used to demonstrate th
       </div>
       <% if current_talent %>
         <div>
-          <%= link_to "Send a promotion!", '#', class: "btn btn-flat" %>
+          <%= link_to "Send a promotion!", new_place_promotion_path(@place), class: "btn btn-flat" %>
         </div>
       <% end %>
     </div>

@@ -1,0 +1,6 @@
+<% if current_talent %>
+  <%= render 'form', place: @place, promotion: @promotion %>
+<% else %>
+  <p>This page is not available</p>
+  <%= link_to "Back to the homepage", root_path, class: "btn btn-flat" %>
+<% end %>
