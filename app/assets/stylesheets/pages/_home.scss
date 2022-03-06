@@ -4,18 +4,26 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 80vh;
+    height: 60vh;
     margin-bottom: 20px;
     text-align: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
     width: 100%;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
   }
+
+
 
   .card-container {
     display: flex;
     justify-content: space-between;
+    margin: -90px 0 90px 0;
   }
 
   .cards-home {
@@ -26,7 +34,6 @@
     word-wrap: break-word;
     background-clip: border-box;
     border-radius: 2px;
-    margin: 10px;
     width: 100%;
   }
 
@@ -39,4 +46,27 @@
     box-shadow: 1px 1px 1px 1px grey;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.125);
+    width: 40%;
   }
+
+
+  .btn-homepage {
+    width: 50%;
+    margin-left: 25%;
+    border: 1px solid purple;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #fff !important;
+    background: linear-gradient(135deg, #7133C7 0%, #8B2FAA 66.25%, #A62B8D 100%);
+    border: none;
+    border-radius: 5px;
+    padding: 4px 15px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.placement-elements {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

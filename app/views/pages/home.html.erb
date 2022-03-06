@@ -2,24 +2,24 @@
     <img class="banner-image" src="https://images.unsplash.com/photo-1543171619-26386da8f3e5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80" alt="Banner">
 </div>
 
-<div class="card-container">
-  <div class="cards-home">
-    <div class="card-home-body">
-      <img src="https://media.istockphoto.com/photos/empty-wooden-bar-counter-picture-id624494724?s=612x612" class="card-img-top" alt="places-img">
-      <h5 class="card-title">You want to express your talent in public ?</h5>
-      <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-      <button class="btn btn-primary">
-        <%= link_to 'find a place to play', places_path %>
-      </button>
-    </div>
+   <div class="card-container">
+      <div class="cards-home">
+        <div class="card-home-body">
+          <div class="placement-elements">
+            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80" class="card-img-top" alt="places-img">
+            <h5 class="card-title">You want to express your talent in public ?</h5>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <%= link_to 'Find a place to play', places_path, class: "btn-homepage" %>
+          </div>
+        </div>
 
-    <div class="card-home-body">
-      <img src="https://media.istockphoto.com/photos/mixed-race-woman-singing-and-playing-guitar-picture-id1125877063?s=612x612" class="card-img-top" alt="talent-img">
-      <h5 class="card-title">Looking for musician to improve your place ?</h5>
-    <!--  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-      <button class="btn btn-primary">
-        <%= link_to 'find your talent!', talents_path %>
-      </button>
-    </div>
+        <div class="card-home-body">
+          <img src="https://images.unsplash.com/photo-1471478331149-c72f17e33c73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80" class="card-img-top" alt="talent-img">
+          <div class="placement-elements">
+            <h5 class="card-title">Looking for musician to improve your place ?</h5>
+          <!--  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <%= link_to 'Find your talent!', talents_path, class: "btn-homepage" %>
+          </div>
+        </div>
+      </div>
   </div>
-</div>
