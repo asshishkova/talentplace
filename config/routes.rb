@@ -21,9 +21,8 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: :index # this route is for checking only
+  resources :promotions, only: :index # this route is for checking only
 
-  # resources :bookings, only: :index # this route is for checking only
   resources :bookings, except: %i[new create]
-
 
 end
