@@ -1,6 +1,6 @@
-<p>
+<small class="text-muted">
 Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</p>
+</small>
 
 <div class="light-background">
   <div class="container mt-5 mb-5 p-3"  >
@@ -11,18 +11,21 @@ Please note that the data on this page is not real, it is used to demonstrate th
           <span class="badge rounded-pill bg-dark">#<%= genre.name %></span>
         <% end %>
         <p>
-        <p><%= @talent.address %></p>
+        <p> <i class="fas fa-map-marker-alt"></i> <%= @talent.address %></p>
         <p>$<%= @talent.price %> per hour</p>
         <p><%= @talent.description %></p>
       </div>
-      <div>
-        <%= link_to "Book!", '#', class: "btn btn-flat" %>
-      </div>
+      <% if current_place %>
+        <div>
+          <%= link_to "Book!", new_talent_booking_path(@talent), class: "btn btn-primary" %>
+        </div>
+      <% end %>
     </div>
     <% if @talent.photo.key %>
       <p><%= cl_image_tag @talent.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
     <% end %>
-    <% youtube_link = "https://www.youtube.com/embed/#{@talent.youtube_link.gsub(/https:\/\/youtu.be\/(.+)/, '\1')}" %>
+    <% regexp = (@talent.youtube_link.include? "youtu.be") ? 'https:\/\/youtu.be\/(.+)' : 'https:\/\/www\.youtube\.com\/watch\?v=(.+)&ab_channel=.+' %>
+    <% youtube_link = "https://www.youtube.com/embed/#{@talent.youtube_link.gsub(/#{regexp}/, '\1')}" %>
     <% instagram_link = "#{@talent.instagram_link}" %>
     <% spotify_link = "#{@talent.spotify_link}" %>
     <div>
@@ -31,11 +34,11 @@ Please note that the data on this page is not real, it is used to demonstrate th
     <p>You can also see <%= @talent.name%>'s <%= link_to 'instagram', instagram_link, target: "_blank"%> and <%= link_to 'spotify', spotify_link, target: "_blank"%> pages.</p>
   <div class="flex-space-between container mt-5 mb-5">
     <div>
-      <%= link_to 'Back to the list', talents_path, class: "btn btn-gradient" %>
+      <%= link_to 'To the list of all the talents', talents_path, class: "btn btn-ghost" %>
     </div>
   </div>
 </div>
 
-<p>
+<small class="text-muted">
 Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</p>
+</small>

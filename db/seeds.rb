@@ -7,6 +7,12 @@ TalentGenre.destroy_all
 puts 'Cleaning up PlaceGenresDB'
 PlaceGenre.destroy_all
 
+puts 'Cleaning up BookingDB'
+Booking.destroy_all
+
+puts 'Cleaning up PromotionDB'
+Promotion.destroy_all
+
 puts 'Cleaning up GenreDB'
 Genre.destroy_all
 
@@ -25,7 +31,7 @@ puts 'Genres are created'
 
 new_talent = Talent.new(
   name: 'Matthew Chandler',
-  email: 'talent1@talent.com',
+  email: 'chandler@mail.com',
   password: '123456',
   address: 'Bat Yam',
   price: 120,
@@ -46,7 +52,7 @@ puts "TalentGenres for #{new_talent.name} created"
 
 new_talent = Talent.new(
   name: 'Bob Walker',
-  email: 'talent2@talent.com',
+  email: 'walker@mail.com',
   password: '123456',
   address: 'Ashdod',
   price: 90,
@@ -67,7 +73,7 @@ puts "TalentGenres for #{new_talent.name} created"
 
 new_talent = Talent.new(
   name: 'Mary Becker',
-  email: 'talent3@talent.com',
+  email: 'becker@mail.com',
   password: '123456',
   address: 'Ramat-Gan',
   price: 150,
@@ -88,7 +94,7 @@ puts "TalentGenres for #{new_talent.name} created"
 
 new_talent = Talent.new(
   name: 'Quadro Breeze',
-  email: 'talent4@talent.com',
+  email: 'quadro@mail.com',
   password: '123456',
   address: 'Tel Aviv',
   price: 400,
@@ -110,7 +116,7 @@ puts "TalentGenres for #{new_talent.name} created"
 
 new_talent = Talent.new(
   name: 'DJ Walter',
-  email: 'talent5@talent.com',
+  email: 'walter@mail.com',
   password: '123456',
   address: 'Tel Aviv',
   price: 200,
@@ -132,7 +138,7 @@ puts "TalentGenres for #{new_talent.name} created"
 
 new_talent = Talent.new(
   name: 'Pablo Campbell',
-  email: 'talent6@talent.com',
+  email: 'pablo@mail.com',
   password: '123456',
   address: 'Holon',
   price: 180,
@@ -155,7 +161,7 @@ puts 'Talents are created'
 
 new_place = Place.new(
   title: 'Wine Tower',
-  email: "place1@place.com",
+  email: "winetower@mail.com",
   password: '123456',
   address: 'Tel Aviv'
 )
@@ -172,7 +178,7 @@ puts "PlaceGenre for #{new_place.title} created"
 
 new_place = Place.new(
   title: 'Good Mood',
-  email: "place2@place.com",
+  email: "goodmood@mail.com",
   password: '123456',
   address: 'Ramat-Gan'
 )
@@ -190,7 +196,7 @@ puts "PlaceGenre for #{new_place.title} created"
 
 new_place = Place.new(
   title: 'Villa 7',
-  email: "place3@place.com",
+  email: "villa7@mail.com",
   password: '123456',
   address: 'Bat Yam'
 )
@@ -208,7 +214,7 @@ puts "PlaceGenre for #{new_place.title} created"
 
 new_place = Place.new(
   title: 'Bar #1',
-  email: "place4@place.com",
+  email: "bar1@mail.com",
   password: '123456',
   address: 'Tel Aviv'
 )
@@ -224,9 +230,6 @@ PlaceGenre.create!(place: new_place, genre: Genre.find_by(name: 'DJ'))
 
 puts "PlaceGenre for #{new_place.title} created"
 
-puts 'Cleaning up BookingDB'
-
-Booking.destroy_all
 Booking.create!(
   place: Place.find_by(title: 'Wine Tower'),
   talent: Talent.find_by(name: 'Mary Becker'),
@@ -324,3 +327,71 @@ Booking.create!(
 )
 
 puts "Bookings are created"
+
+Promotion.create!(
+  talent: Talent.find_by(name: 'DJ Walter'),
+  place: Place.find_by(title: 'Bar #1'),
+  message: 'Hey, I live really next to you, can come any day!'
+)
+
+Promotion.create!(
+  talent: Talent.find_by(name: 'Pablo Campbell'),
+  place: Place.find_by(title: 'Good Mood'),
+  message: 'Hello, I am Pablo, I think my music is perfect for your place'
+)
+
+Promotion.create!(
+  talent: Talent.find_by(name: 'Pablo Campbell'),
+  place: Place.find_by(title: 'Villa 7'),
+  message: 'Hi, I am Pablo, please check out my profile page'
+)
+
+Promotion.create!(
+  talent: Talent.find_by(name: 'Matthew Chandler'),
+  place: Place.find_by(title: 'Bar #1'),
+  message: 'Hey, I am Matthew, I am the one you are looking for'
+)
+
+Promotion.create!(
+  talent: Talent.find_by(name: 'Matthew Chandler'),
+  place: Place.find_by(title: 'Wine Tower'),
+  message: 'Hello, I am Matthew, I would be happy to play for you'
+)
+
+Promotion.create!(
+  talent: Talent.find_by(name: 'Bob Walker'),
+  place: Place.find_by(title: 'Bar #1'),
+  message: 'Hey guys, need some rock?'
+)
+
+Promotion.create!(
+  talent: Talent.find_by(name: 'Bob Walker'),
+  place: Place.find_by(title: 'Good Mood'),
+  message: 'My rock songs can make the mood even better!'
+)
+
+Promotion.create!(
+  talent: Talent.find_by(name: 'Mary Becker'),
+  place: Place.find_by(title: 'Good Mood'),
+  message: 'Hello, please pay attention to my profile'
+)
+
+Promotion.create!(
+  talent: Talent.find_by(name: 'Mary Becker'),
+  place: Place.find_by(title: 'Wine Tower'),
+  message: 'Hi, please check out my profile'
+)
+
+Promotion.create!(
+  talent: Talent.find_by(name: 'Quadro Breeze'),
+  place: Place.find_by(title: 'Villa 7'),
+  message: 'Hi, we are professionsl musicians and performers'
+)
+
+Promotion.create!(
+  talent: Talent.find_by(name: 'Quadro Breeze'),
+  place: Place.find_by(title: 'Wine Tower'),
+  message: 'We are sure that our talents will impress you'
+)
+
+puts "Promotions are created"

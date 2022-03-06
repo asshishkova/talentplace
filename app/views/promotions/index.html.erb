@@ -1,0 +1,20 @@
+<h1>Promotions from all the Talents</h1>
+<% talents = Talent.all %>
+<% talents.each do |talent|%>
+  <p> Promotions from <%=  talent.name  %> </p>
+    <ul>
+      <% talent.promotions.each do |promotion|%>
+        <li> <%=  promotion.place.title  %> - <%=  promotion.message  %> </li>
+      <% end %>
+    </ul>
+<% end %>
+<h1>Promotions for all the Places</h1>
+<% places = Place.all %>
+<% places.each do |place|%>
+  <p> Promotions for <%=  place.title  %> </p>
+    <ul>
+      <% place.promotions.each do |promotion|%>
+        <li> <%=  promotion.talent.name  %> - <%=  promotion.message  %> </li>
+      <% end %>
+    </ul>
+<% end %>

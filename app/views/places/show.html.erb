@@ -1,21 +1,23 @@
-<p>
+<small class="text-muted">
 Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</p>
+</small>
 
 <div class="light-background">
   <div class="container mt-5 mb-5 p-3"  >
     <div class="flex-space-between">
       <div>
         <h2><%= @place.title %></h2>
-        <p><%= @place.address %></p>
+        <p><i class="fas fa-map-marker-alt"></i> <%= @place.address %></p>
         <% @place.genres.each do |genre| %>
           <span class="badge rounded-pill bg-dark">#<%= genre.name %></span>
         <% end %>
         <p><%= @place.description %></p>
       </div>
-      <div>
-        <%= link_to "Book!", '#', class: "btn btn-flat" %>
-      </div>
+      <% if current_talent %>
+        <div>
+          <%= link_to "Send a promotion!", new_place_promotion_path(@place), class: "btn btn-primary" %>
+        </div>
+      <% end %>
     </div>
     <% if @place.photo.key %>
       <p><%= cl_image_tag @place.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
@@ -24,11 +26,11 @@ Please note that the data on this page is not real, it is used to demonstrate th
     <p>You can also see <%= link_to 'our website', website, target: "_blank"%></p>
   <div class="flex-space-between container mt-5 mb-5">
     <div>
-      <%= link_to 'Back to the list', places_path, class: "btn btn-gradisent" %>
+      <%= link_to 'To the list of all the places', places_path, class: "btn btn-ghost" %>
     </div>
   </div>
 </div>
 
-<p>
+<small class="text-muted">
 Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</p>
+</small>
