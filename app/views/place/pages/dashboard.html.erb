@@ -1,1 +1,67 @@
-<%= current_place.title %>
+<div class="dashboard_place_container">
+  <div class = "dashboard_place_section_1">
+    <div class = "profil_pic_dashboard_place">
+      <% if current_place.photo.key %>
+        <p><%= cl_image_tag current_place.photo.key, class: "img-fluid " %></p>
+      <% end %>
+    </div>
+    <div class="dashboard_place_info">
+      <p><%= current_place.title  %></p>
+      <p><%= current_place.address  %></p>
+      <p><%= current_place.description  %></p>
+      <div class="dashboard_place_btn_top">
+        <div>
+        <button class = "top_buttons_dashboard_place"><%= link_to 'view my profil', place_path(current_place) %></button>
+        </div>
+        <div>
+        <button class = "top_buttons_dashboard_place"><%= link_to 'edit my profil', edit_place_path(current_place) %></button>
+        </div>
+      </div>
+    </div>
+    <div class = "dashboard_place_find_place">
+      <button class = "top_buttons_dashboard_place"><%= link_to 'Find a place to play ! ', places_path %></button>
+    </div>
+  </div>
+
+  <br><br><br>
+
+  <div class = "dashboard_place_section_2">
+    <h2>Bookings I received</h2>
+    <div>
+      <div class="row justify-content-center">
+      <table class = "booking_table_dashboard_place">
+          <% @bookings.each do |booking|%>
+          <div class="dashboard_place_row_booking">
+            <tr>
+              <td><p><%= booking.talent.name %></p></td>
+              <td><p><%= booking.date %></p></td>
+              <td><p><%= booking.message %></p></td>
+              <td><button class = "booking_buttons_dashboard_place">Delete</button></td>
+            </tr>
+          </div>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class = "dashboard_place_section_3">
+      <h2>My promotions</h2>
+      <div>
+        <div class="row justify-content-center">
+        <table class = "promotion_table_dashboard_place">
+            <% @promotions.each do |promotion|%>
+            <div class="dashboard_place_row_promotion">
+              <tr>
+                <td><p><%= promotion.talent.name %></p></td>
+                <td><p><%= promotion.message %></p></td>
+                <td><button class = "promotion_buttons_dashboard_place">Cancel</button></td>
+              </tr>
+            </div>
+            <% end %>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
