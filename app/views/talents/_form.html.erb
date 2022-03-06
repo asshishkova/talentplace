@@ -1,0 +1,67 @@
+<div class = "edit_talent_container">
+  <h2 class="edit_talent_h2">Edit my profil</h2>
+  <div class = "edit_talent_labels">
+    <div>
+      <%= simple_form_for @talent do |f| %>
+
+      <div class="">
+        <%= f.label 'name:' %><br>
+        <%= f.text_field :name, class: "edit_talent_label_style" %><br>
+
+        <%= f.input :photo, as: :file %>
+
+      <div class="">
+        <%= f.label 'email:' %><br>
+        <%= f.text_field :email, class: "edit_talent_label_style" %><br>
+      </div>
+
+      <div class="">
+        <%= f.label 'address (city):' %><br>
+        <%= f.text_field :address, class: "edit_talent_label_style" %><br>
+      </div>
+
+      <div class="">
+        <%= f.label 'price per hour ($):'%><br>
+        <%= f.text_field :price, class: "edit_talent_label_style" %><br>
+      </div>
+
+      <div class="" data-controller="talent-genres">
+        <%= f.hidden_field :genre_ids, as: :hidden, data: { talent_genres_target: "ids" }, value: @talent.genres.pluck(:id).join(',') %>
+
+        <%= f.label 'genres:'%><br>
+        <% @all_genres.each do |talent_genre| %>
+          <%= f.label talent_genre.genre.name %>
+          <%= f.text_field :genres,
+              type: :checkbox,
+              checked: talent_genre.persisted?,
+              value: talent_genre.genre.id,
+              data: { talent_genres_target: "genre", action: "change->talent-genres#change" } %>
+        <% end %>
+      </div>
+
+      <div class="">
+        <%= f.label 'description:' %><br>
+        <%= f.text_field :description, class: "edit_talent_label_style" %><br>
+      </div>
+
+      <div class="">
+        <%= f.label "youtube link (to the video, not to the channel):"%><br>
+        <%= f.text_field :youtube_link, class: "edit_talent_label_style" %><br>
+      </div>
+
+      <div class="">
+        <%= f.label "instagram link:" %><br>
+        <%= f.text_field :instagram_link, class: "edit_talent_label_style" %><br>
+      </div>
+
+      <div class="">
+        <%= f.label "spotify link:" %><br>
+        <%= f.text_field :spotify_link, class: "edit_talent_label_style" %><br>
+      </div>
+
+
+        <%= f.submit "Submit" %>
+      <% end %>
+    </div>
+  </div>
+</div>

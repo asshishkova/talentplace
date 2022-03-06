@@ -9,9 +9,18 @@ class PlacesController < ApplicationController
   end
 
   def edit
+    place_genres = Genre.where.not(id: [@place.genres.pluck(:id)]).map do |genre|
+      PlaceGenre.new(genre: genre, place: current_place)
+    end
+    @all_genres = place_genres + @place.place_genres
   end
 
   def update
+    @place.place_genres.destroy_all
+    genre_ids = params[:place][:genre_ids].split(',').map(&:to_i)
+    genre_ids.each do |genre_id|
+      PlaceGenre.create!(place: current_place, genre: Genre.find_by(id: genre_id))
+    end
     @place.update(place_params)
     redirect_to place_path(@place)
   end

@@ -1,0 +1,51 @@
+<div class = "edit_place_container">
+  <h2 class="edit_place_h2">Edit my profil</h2>
+  <div class = "edit_place_labels">
+    <div>
+      <%= simple_form_for @place do |f| %>
+
+      <div class="">
+        <%= f.label 'title:' %><br>
+        <%= f.text_field :title, class: "edit_place_label_style" %><br>
+
+        <%= f.input :photo, as: :file %>
+
+      <div class="">
+        <%= f.label 'email:' %><br>
+        <%= f.text_field :email, class: "edit_place_label_style" %><br>
+      </div>
+
+      <div class="">
+        <%= f.label 'address:'%><br>
+        <%= f.text_field :address, class: "edit_place_label_style" %><br>
+      </div>
+
+      <div class="">
+        <%= f.label 'description:' %><br>
+        <%= f.text_field :description, class: "edit_place_label_style" %><br>
+      </div>
+
+      <div class="" data-controller="place-genres">
+        <%= f.hidden_field :genre_ids, as: :hidden, data: { place_genres_target: "ids" }, value: @place.genres.pluck(:id).join(',') %>
+
+        <%= f.label 'genres:'%><br>
+        <% @all_genres.each do |place_genre| %>
+          <%= f.label place_genre.genre.name %>
+          <%= f.text_field :genres,
+              type: :checkbox,
+              checked: place_genre.persisted?,
+              value: place_genre.genre.id,
+              data: { place_genres_target: "genre", action: "change->place-genres#change" } %>
+        <% end %>
+      </div>
+
+      <div class="">
+        <%= f.label "website:"%><br>
+        <%= f.text_field :website, class: "edit_place_label_style" %><br>
+      </div>
+
+        <%= f.submit "Submit" %>
+      <% end %>
+    </div>
+  </div>
+</div>
