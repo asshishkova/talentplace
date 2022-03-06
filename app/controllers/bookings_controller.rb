@@ -17,7 +17,7 @@ class BookingsController < ApplicationController
     @booking.status = 'pending'
 
     if @booking.save
-      redirect_to bookings_path, notice: 'Booking completed, wait for the anwer.'
+      redirect_to place_dashboard_path, notice: 'Booking completed, wait for the anwer.'
     else
       render :new
     end

@@ -196,7 +196,7 @@ puts "PlaceGenre for #{new_place.title} created"
 
 new_place = Place.new(
   title: 'Villa 7',
-  email: "villa5@mail.com",
+  email: "villa7@mail.com",
   password: '123456',
   address: 'Bat Yam'
 )

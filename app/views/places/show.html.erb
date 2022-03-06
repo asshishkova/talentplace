@@ -7,7 +7,7 @@ Please note that the data on this page is not real, it is used to demonstrate th
     <div class="flex-space-between">
       <div>
         <h2><%= @place.title %></h2>
-        <p><%= @place.address %></p>
+        <p><i class="fas fa-map-marker-alt"></i> <%= @place.address %></p>
         <% @place.genres.each do |genre| %>
           <span class="badge rounded-pill bg-dark">#<%= genre.name %></span>
         <% end %>
@@ -15,7 +15,7 @@ Please note that the data on this page is not real, it is used to demonstrate th
       </div>
       <% if current_talent %>
         <div>
-          <%= link_to "Send a promotion!", '#', class: "btn btn-flat" %>
+          <%= link_to "Send a promotion!", new_place_promotion_path(@place), class: "btn btn-primary" %>
         </div>
       <% end %>
     </div>
@@ -26,7 +26,7 @@ Please note that the data on this page is not real, it is used to demonstrate th
     <p>You can also see <%= link_to 'our website', website, target: "_blank"%></p>
   <div class="flex-space-between container mt-5 mb-5">
     <div>
-      <%= link_to 'Back to the list', places_path, class: "btn btn-gradisent" %>
+      <%= link_to 'To the list of all the places', places_path, class: "btn btn-ghost" %>
     </div>
   </div>
 </div>
