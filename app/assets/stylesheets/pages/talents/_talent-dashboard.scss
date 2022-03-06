@@ -2,15 +2,26 @@
 
 }
 
+h2 {
+  margin-left: 100px;
+  margin-bottom: 30px;
+}
+
+a {
+  color: #fff
+}
+// section 1
+
 .dashboard_talent_section_1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.dashboard_talent_section_2 {
-
+.img-fluid {
+  margin-left: 50px;
 }
+
 
 .profil_pic_dashboard_talent {
   width: 350px;
@@ -19,22 +30,59 @@
 }
 
 .dashboard_talent_info {
-  padding-top: 10px;
+  padding-top: 40px;
   width: 300px;
 }
 
-.dashboard_talent_btn_top {
+.dashboard_talent_find_place {
+  padding-right: 30px;
+}
+
+// section 2
+
+.dashboard_talent_section_2 {
 
 }
 
-.dashboard_talent_find_place {
-  padding-right: 10px;
+.booking_buttons_dashboard_Talent {
+  color: #fff !important;
+    background: linear-gradient(135deg, #7133c7 0%, #8b2faa 66.25%, #a62b8d 100%);
+  border: none;
+  border-radius: 5px;
+  padding: 4px 15px;
 }
 
 .dashboard_talent_row_booking {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 800px;
-  padding: auto;
 }
+
+.booking_table_dashboard_talent {
+  width: 70%;
+  background-color: #ededed;
+  padding: 30px;
+}
+
+div tr{
+  border-bottom: 1px solid #d1d1d1;
+  border-radius: 10px;
+}
+
+.top_buttons_dashboard_Talent {
+  color: #fff !important;
+  background: linear-gradient(135deg, #7133c7 0%, #8b2faa 66.25%, #a62b8d 100%);
+  border: none;
+  border-radius: 5px;
+  padding: 4px 15px;
+  margin-bottom: 10px;
+}
+
+
+.dashboard_talent_section_2 {
+  td {
+    padding: 10px 5px;
+  }
+}
+
+// section 3
