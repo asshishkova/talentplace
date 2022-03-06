@@ -8,40 +8,60 @@
     <div class="dashboard_talent_info">
       <p><%= current_talent.name  %></p>
       <p><%= current_talent.description  %></p>
-      <p><%= current_talent.price  %></p>
       <div class="dashboard_talent_btn_top">
         <div>
-        <button class = "btn btn-warning"><%= link_to 'view my profil', talent_path(current_talent) %></button>
+        <button class = "top_buttons_dashboard_Talent"><%= link_to 'view my profil', talent_path(current_talent) %></button>
         </div>
         <div>
-        <button class = "btn btn-danger"><%= link_to 'edit my profil', edit_talent_path(current_talent) %></button>
+        <button class = "top_buttons_dashboard_Talent"><%= link_to 'edit my profil', edit_talent_path(current_talent) %></button>
         </div>
       </div>
     </div>
     <div class = "dashboard_talent_find_place">
-      <button class = "btn btn-dark"><%= link_to 'Find a place to play ! ', places_path %></button>
+      <button class = "top_buttons_dashboard_Talent"><%= link_to 'Find a place to play ! ', places_path %></button>
     </div>
   </div>
-
-
-
 
 <br><br><br>
 
   <div class = "dashboard_talent_section_2">
     <h2>Bookings I received</h2>
-    <div class="dashboard_talent_booking_rows">
-      <div class="row">
-        <% @bookings.each do |booking|%>
-
-          <p><%= booking.date %></p>
-          <p><%= booking.place.title %></p>
-
-        <% end %>
+    <div>
+      <div class="row justify-content-center">
+      <table class = "booking_table_dashboard_talent">
+          <% @bookings.each do |booking|%>
+          <div class="dashboard_talent_row_booking">
+            <tr>
+              <td><p><%= booking.place.title %></p></td>
+              <td><p><%= booking.date %></p></td>
+              <td><button class = "booking_buttons_dashboard_Talent">confirm</button></td>
+              <td><button class = "booking_buttons_dashboard_Talent">decline</button></td>
+            </tr>
+          </div>
+          <% end %>
+        </table>
       </div>
     </div>
   </div>
 
   <div class = "dashboard_talent_section_3">
+    <h2>My promotions</h2>
+    <div>
+      <div class="row justify-content-center">
+      <table class = "promotion_table_dashboard_talent">
+          <% @promotions.each do |promotion|%>
+          <div class="dashboard_talent_row_promotion">
+            <tr>
+              <td><p><%= promotion.place.title %></p></td>
+              <td><p><%= promotion.address %></p></td>
+              <td><p><%= promotion.date %></p></td>
+              <td><button class = "promotion_buttons_dashboard_Talent">Cancel</button></td>
+            </tr>
+          </div>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
   </div>
 </div>
