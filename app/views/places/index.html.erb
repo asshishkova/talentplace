@@ -17,7 +17,7 @@ Please note that the data on this page is not real, it is used to demonstrate th
                 <% end %>
                 <div class="p-3 rounded-bottom d-flex flex-column">
                   <strong><%= place.title %> </strong>
-                  <small class="text-muted"><%= place.address %></small>
+                  <small class="text-muted"><i class="fas fa-map-marker-alt"></i> <%= place.address %></small>
                   <small class="text-muted">
                     <% place.genres.each do |genre| %>
                       <span class="badge rounded-pill bg-light text-dark">#<%= genre.name %></span>
