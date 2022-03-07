@@ -1,7 +1,3 @@
-<small class="text-muted">
-Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</small>
-
 <div class="light-background">
   <div class="container mt-5 mb-5 p-3"  >
     <div class="flex-space-between">
@@ -15,7 +11,8 @@ Please note that the data on this page is not real, it is used to demonstrate th
       </div>
       <% if current_talent %>
         <div>
-          <%= link_to "Send a promotion!", new_place_promotion_path(@place), class: "btn btn-primary" %>
+          <%# link_to "Send a promotion!", new_place_promotion_path(@place), class: "btn btn-primary" %>
+          <%= render "promotions/form", place: @place, promotion: @promotion %>
         </div>
       <% end %>
     </div>
@@ -30,7 +27,3 @@ Please note that the data on this page is not real, it is used to demonstrate th
     </div>
   </div>
 </div>
-
-<small class="text-muted">
-Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</small>

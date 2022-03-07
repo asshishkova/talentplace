@@ -6,6 +6,7 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @promotion = Promotion.new
   end
 
   def edit
