@@ -8,9 +8,21 @@ class PlacesController < ApplicationController
     else
       @places = Place.all
     end
+    @markers = @places.geocoded.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { place: place })
+      }
+    end
   end
 
   def show
+    @markers = [{
+      lat: @place.latitude,
+      lng: @place.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { place: @place })
+      }]
   end
 
   def edit

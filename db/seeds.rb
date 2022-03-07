@@ -163,7 +163,7 @@ new_place = Place.new(
   title: 'Wine Tower',
   email: "winetower@mail.com",
   password: '123456',
-  address: 'Tel Aviv'
+  address: 'Tel Aviv, Dizengoff Square 1'
 )
 new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
 new_place.description = "Hi, we are a cute restaurant '#{new_place.title}', we are located in the South of #{new_place.address}."
@@ -180,7 +180,7 @@ new_place = Place.new(
   title: 'Good Mood',
   email: "goodmood@mail.com",
   password: '123456',
-  address: 'Ramat-Gan'
+  address: 'Ramat Gan, Herzl 4'
 )
 new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
 new_place.description = "Hello, we are '#{new_place.title}', you can easily find us in the South of #{new_place.address}. We have a lot of guests every evening"
@@ -198,7 +198,7 @@ new_place = Place.new(
   title: 'Villa 7',
   email: "villa7@mail.com",
   password: '123456',
-  address: 'Bat Yam'
+  address: 'Bat Yam, Agnon 51'
 )
 new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
 new_place.description = "Hello, we looking for a singer to make our guests happy!"
@@ -216,7 +216,7 @@ new_place = Place.new(
   title: 'Bar #1',
   email: "bar1@mail.com",
   password: '123456',
-  address: 'Tel Aviv'
+  address: 'Tel Aviv, Rotshild 13'
 )
 new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
 new_place.description = "'#{new_place.title}' is located in the middle of #{new_place.address} and is full every Friday."
