@@ -1,5 +1,5 @@
 <div class = "edit_place_container">
-  <h2 class="edit_place_h2">Edit my profil</h2>
+  <h2 class="edit_place_h2">Edit our profile</h2>
   <div class = "edit_place_labels">
     <div>
       <%= simple_form_for @place do |f| %>
@@ -16,7 +16,7 @@
       </div>
 
       <div class="">
-        <%= f.label 'address:'%><br>
+        <%= f.label 'address (city, street):'%><br>
         <%= f.text_field :address, class: "edit_place_label_style" %><br>
       </div>
 

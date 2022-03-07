@@ -10,22 +10,22 @@
       <p><%= current_talent.description  %></p>
       <div class="dashboard_talent_btn_top">
         <div>
-        <button class = "top_buttons_dashboard_Talent"><%= link_to 'view my profil', talent_path(current_talent) %></button>
+        <button class = "top_buttons_dashboard_Talent"><%= link_to 'view my profile', talent_path(current_talent) %></button>
         </div>
         <div>
-        <button class = "top_buttons_dashboard_Talent"><%= link_to 'edit my profil', edit_talent_path(current_talent) %></button>
+        <button class = "top_buttons_dashboard_Talent"><%= link_to 'edit my profile', edit_talent_path(current_talent) %></button>
         </div>
       </div>
     </div>
     <div class = "dashboard_talent_find_place">
-      <button class = "top_buttons_dashboard_Talent"><%= link_to 'Find a place to play ! ', places_path %></button>
+      <button class = "top_buttons_dashboard_Talent"><%= link_to 'Find a place to play!', places_path %></button>
     </div>
   </div>
 
 <br><br><br>
 
   <div class = "dashboard_talent_section_2">
-    <h2>My Bookings</h2>
+    <h2>Bookings I received</h2>
     <div>
       <div class="row justify-content-center">
       <table class = "booking_table_dashboard_talent">
@@ -35,8 +35,12 @@
               <td><p><%= booking.place.title %></p></td>
               <td><p><%= booking.date %></p></td>
               <td><p><%= booking.message %></p></td>
-              <td><button class = "booking_buttons_dashboard_Talent">confirm</button></td>
-              <td><button class = "booking_buttons_dashboard_Talent">decline</button></td>
+              <% if booking.status == 'pending' %>
+                <td><%= link_to "confirm", booking_path(booking, status: 'confirmed'), method: :patch, class: "promotion_buttons_dashboard_Talent", data: { confirm: "Are you sure you want to confirm this promotion?" } %></td>
+                <td><%= link_to "decline", booking_path(booking, status: 'declined'), method: :patch, class: "promotion_buttons_dashboard_Talent", data: { confirm: "Are you sure you want to decline this promotion?" } %></td>
+              <% else  %>
+                <td><p><%= booking.status %></p></td>
+              <% end %>
             </tr>
           </div>
           <% end %>
@@ -46,7 +50,7 @@
   </div>
 
   <div class = "dashboard_talent_section_3">
-    <h2>My promotions</h2>
+    <h2>Promotions I sent</h2>
     <div>
       <div class="row justify-content-center">
       <table class = "promotion_table_dashboard_talent">
@@ -55,7 +59,7 @@
             <tr>
               <td><p><%= promotion.place.title %></p></td>
               <td><p><%= promotion.message %></p></td>
-              <td><button class = "promotion_buttons_dashboard_Talent">Cancel</button></td>
+              <td><%= link_to "Cancel", promotion_path(promotion), method: :delete, class: "bad_btn", data: { confirm: "Are you sure you want to cancel this promotion?" } %></td>
             </tr>
           </div>
           <% end %>

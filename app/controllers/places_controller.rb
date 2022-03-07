@@ -2,11 +2,28 @@ class PlacesController < ApplicationController
   before_action :set_place, only: %i[show edit update]
 
   def index
-    @places = Place.all
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR address ILIKE :query OR genres.name ILIKE :query"
+      @places = Place.joins(:genres).where(sql_query, query: "%#{params[:query]}%").distinct
+    else
+      @places = Place.all
+    end
+    @markers = @places.geocoded.map do |place|
+      {
+        lat: place.latitude,
+        lng: place.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { place: place })
+      }
+    end
   end
 
   def show
     @promotion = Promotion.new
+    @markers = [{
+      lat: @place.latitude,
+      lng: @place.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { place: @place })
+      }]
   end
 
   def edit

@@ -60,7 +60,7 @@ new_talent = Talent.new(
   youtube_link: 'https://youtu.be/qm5FsgKDyQo',
   spotify_link: 'https://open.spotify.com/artist/05yMo6qbw9tAIRbIfi1tVn'
 )
-new_talent.description = "Hi, I am #{new_talent.name} from #{new_talent.address}, I take part in about 20 shows a year, I can improve your place's atmosphere."
+new_talent.description = "Hi, I am #{new_talent.name} from #{new_talent.address}, I am a professional musician and I love my job."
 file = URI.open('https://musicindustryhowtoimages.s3.amazonaws.com/wp-content/uploads/2019/09/24183938/become-musician.jpg')
 new_talent.photo.attach(io: file, filename: 'musicindustryhowtoimages.png', content_type: 'image/png')
 new_talent.save!
@@ -81,7 +81,7 @@ new_talent = Talent.new(
   youtube_link: 'https://youtu.be/iEBX_ouEw1I',
   spotify_link: 'https://open.spotify.com/artist/5JdT0LYJdlPbTC58p60WTX'
 )
-new_talent.description = "Hello, I am #{new_talent.name} from #{new_talent.address}, I take part in about 70 shows a year, I can improve your place's atmosphere."
+new_talent.description = "Hello, I am #{new_talent.name}. I started playing violin when I was 7. Check out my youtube video"
 file = URI.open('https://www.royalnavy.mod.uk/-/media/careers-section-redesign/homepage/roles-and-specialisations/services/marines/musician/roledetail_videoposter_647x364-assets/647x364_musician.jpg?h=364&w=647&rev=0124080e27394453b053e23bb219b652&cropregion=&hash=997DFA126796BE9EB2DB4FA04EC6A8AA')
 new_talent.photo.attach(io: file, filename: 'Mary.png', content_type: 'image/png')
 new_talent.save!
@@ -124,7 +124,7 @@ new_talent = Talent.new(
   youtube_link: 'https://youtu.be/Cz3F_25ajgw',
   spotify_link: 'https://open.spotify.com/artist/5vpWEdK9C28uOX8jjfRi1v'
 )
-new_talent.description = "Hello, I am #{new_talent.name} from #{new_talent.address}, I take part in about 200 shows a year, I can improve your place's atmosphere."
+new_talent.description = "Hello, I am #{new_talent.name}, I am a DJ with 10 years experience"
 file = URI.open('https://smallbiztrends.com/ezoimgfmt/media.smallbiztrends.com/2017/03/shutterstock_402500896-850x476.jpg?ezimgfmt=ng%3Awebp%2Fngcb12%2Frs%3Adevice%2Frscb12-2')
 new_talent.photo.attach(io: file, filename: 'shutterstock.png', content_type: 'image/png')
 new_talent.save!
@@ -146,7 +146,7 @@ new_talent = Talent.new(
   youtube_link: 'https://youtu.be/9e0Tuvitkgs',
   spotify_link: 'https://open.spotify.com/playlist/7DV0Aj6AN1vPVePAjaqhiJ'
 )
-new_talent.description = "Hello, I am #{new_talent.name} from #{new_talent.address}, I take part in about 30 shows a year, I can improve your place's atmosphere"
+new_talent.description = "Hello, I am #{new_talent.name} from #{new_talent.address}, I play violin and I enjoy it. Let's enjoy together!"
 file = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/A_musician_playing_violin_4.jpg/1280px-A_musician_playing_violin_4.jpg')
 new_talent.photo.attach(io: file, filename: 'wikimedia.png', content_type: 'image/png')
 new_talent.save!
@@ -163,10 +163,10 @@ new_place = Place.new(
   title: 'Wine Tower',
   email: "winetower@mail.com",
   password: '123456',
-  address: 'Tel Aviv'
+  address: 'Tel Aviv, Dizengoff Square 1'
 )
 new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
-new_place.description = "Hi, we are a cute restaurant '#{new_place.title}', located in the middle of #{new_place.address}. Looking for a talent to make our guests happy!"
+new_place.description = "Hi, we are a cute restaurant '#{new_place.title}', we are located in the South of #{new_place.address}."
 file = URI.open('https://upload.wikimedia.org/wikipedia/commons/e/ef/Restaurant_N%C3%A4sinneula.jpg')
 new_place.photo.attach(io: file, filename: 'media-cdn.png', content_type: 'image/png')
 new_place.save!
@@ -180,10 +180,10 @@ new_place = Place.new(
   title: 'Good Mood',
   email: "goodmood@mail.com",
   password: '123456',
-  address: 'Ramat-Gan'
+  address: 'Ramat Gan, Herzl 4'
 )
 new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
-new_place.description = "Hi, we are '#{new_place.title}', located in the middle of #{new_place.address}. Looking for a talent to make our guests happy!"
+new_place.description = "Hello, we are '#{new_place.title}', you can easily find us in the South of #{new_place.address}. We have a lot of guests every evening"
 file = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/1a/b8/46/6d/london-stock.jpg')
 new_place.photo.attach(io: file, filename: 'media-cdn.png', content_type: 'image/png')
 new_place.save!
@@ -198,10 +198,10 @@ new_place = Place.new(
   title: 'Villa 7',
   email: "villa7@mail.com",
   password: '123456',
-  address: 'Bat Yam'
+  address: 'Bat Yam, Agnon 51'
 )
 new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
-new_place.description = "Hi, we are a cute restaurant '#{new_place.title}', located in the middle of #{new_place.address}. Looking for a talent to make our guests happy!"
+new_place.description = "Hello, we looking for a singer to make our guests happy!"
 file = URI.open('https://d3aux7tjp119y2.cloudfront.net/original_images/Tak2-CMSTemplate_IrMZHla.jpg')
 new_place.photo.attach(io: file, filename: 'd3aux7tjp119y2.png', content_type: 'image/png')
 new_place.save!
@@ -216,10 +216,10 @@ new_place = Place.new(
   title: 'Bar #1',
   email: "bar1@mail.com",
   password: '123456',
-  address: 'Tel Aviv'
+  address: 'Tel Aviv, Rotshild 13'
 )
 new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
-new_place.description = "Hi, we are '#{new_place.title}', located in the middle of #{new_place.address}. Looking for a talent to make our guests happy!"
+new_place.description = "'#{new_place.title}' is located in the middle of #{new_place.address} and is full every Friday."
 file = URI.open('https://www.beachstonecafe.com.au/wp-content/uploads/2022/01/pic-348.jpg')
 new_place.photo.attach(io: file, filename: 'd3aux7tjp119y2.png', content_type: 'image/png')
 new_place.save!
@@ -291,7 +291,7 @@ Booking.create!(
   talent: Talent.find_by(name: 'Matthew Chandler'),
   date: (DateTime.civil_from_format :local, 2022, 4, 10, 21, 30),
   status: 'pending',
-  message: 'please were suit if it is possible'
+  message: 'please wear suit if it is possible'
 )
 
 Booking.create!(

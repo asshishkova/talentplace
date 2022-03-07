@@ -1,29 +1,38 @@
-<div class="light-background">
-  <div class="container mt-5 mb-5 p-3"  >
-    <div class="flex-space-between">
+<div class="">
+  <div class="container mt-5"  >
+    <div class="grid">
+
       <div>
-        <h2><%= @place.title %></h2>
+        <% if @place.photo.key %>
+        <p><%= cl_image_tag @place.photo.key, class: "img-fluid shadow place_profile_pic " %></p>
+        <% end %>
+      </div>
+      <div class = "profile_place_info">
+        <h3 class = "h3_profile_place"><%= @place.title %></h3>
         <p><i class="fas fa-map-marker-alt"></i> <%= @place.address %></p>
         <% @place.genres.each do |genre| %>
           <span class="badge rounded-pill bg-dark">#<%= genre.name %></span>
         <% end %>
-        <p><%= @place.description %></p>
+        <p class = "pt-3"><%= @place.description %></p>
       </div>
-      <% if current_talent %>
-        <div>
-          <%# link_to "Send a promotion!", new_place_promotion_path(@place), class: "btn btn-primary" %>
-          <%= render "promotions/form", place: @place, promotion: @promotion %>
+      <div class = "mt-5">
+         <% website = "#{@place.website}" %>
+         <p class = ""> <%= link_to 'Our website', website, target: "_blank",  class: "purple_pink_btn py-2" %></p>
+        <%if current_talent %>
+          <div class = "mb-4">
+            <%= render "promotions/form", place: @place, promotion: @promotion %>
+          </div>
+        <% end %>
         </div>
-      <% end %>
     </div>
-    <% if @place.photo.key %>
-      <p><%= cl_image_tag @place.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
-    <% end %>
-    <% website = "#{@place.website}" %>
-    <p>You can also see <%= link_to 'our website', website, target: "_blank"%></p>
   <div class="flex-space-between container mt-5 mb-5">
     <div>
-      <%= link_to 'To the list of all the places', places_path, class: "btn btn-ghost" %>
+      <%= link_to 'Back to the list', places_path, class: "bad_btn" %>
     </div>
+  </div>
+  <div style="width: 100%; height: 600px;"
+    data-controller="mapbox"
+    data-mapbox-markers-value="<%= @markers.to_json %>"
+    data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>

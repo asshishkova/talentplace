@@ -11,22 +11,22 @@
       <p><%= current_place.description  %></p>
       <div class="dashboard_place_btn_top">
         <div>
-        <button class = "top_buttons_dashboard_place"><%= link_to 'view my profil', place_path(current_place) %></button>
+        <button class = "top_buttons_dashboard_place"><%= link_to 'view our profile', place_path(current_place) %></button>
         </div>
         <div>
-        <button class = "top_buttons_dashboard_place"><%= link_to 'edit my profil', edit_place_path(current_place) %></button>
+        <button class = "top_buttons_dashboard_place"><%= link_to 'edit our profile', edit_place_path(current_place) %></button>
         </div>
       </div>
     </div>
     <div class = "dashboard_place_find_place">
-      <button class = "top_buttons_dashboard_place"><%= link_to 'Find a place to play ! ', places_path %></button>
+      <button class = "top_buttons_dashboard_place"><%= link_to 'Find a talent!', talents_path %></button>
     </div>
   </div>
 
   <br><br><br>
 
   <div class = "dashboard_place_section_2">
-    <h2>My promotions</h2>
+    <h2 class = "h2_dashboard_place">Our bookings</h2>
     <div>
       <div class="row justify-content-center">
       <table class = "booking_table_dashboard_place">
@@ -36,7 +36,7 @@
               <td><p><%= booking.talent.name %></p></td>
               <td><p><%= booking.date %></p></td>
               <td><p><%= booking.message %></p></td>
-              <td><button class = "booking_buttons_dashboard_place">Delete</button></td>
+              <td><%= link_to "Cancel", booking_path(booking), method: :delete, class: "bad_btn", data: { confirm: "Are you sure you want to cancel this booking?" } %></td>
             </tr>
           </div>
           <% end %>
@@ -46,7 +46,7 @@
   </div>
 
   <div class = "dashboard_place_section_3">
-      <h2>Bookings</h2>
+      <h2 class = "h2_dashboard_place">Promotions we received</h2>
       <div>
         <div class="row justify-content-center">
         <table class = "promotion_table_dashboard_place">
@@ -55,7 +55,7 @@
               <tr>
                 <td><p><%= promotion.talent.name %></p></td>
                 <td><p><%= promotion.message %></p></td>
-                <td><button class = "promotion_buttons_dashboard_place">view the talent</button></td>
+                <td><%= link_to 'view profile', talent_path(promotion.talent), class: "promotion_buttons_dashboard_place" %></td>
               </tr>
             </div>
             <% end %>

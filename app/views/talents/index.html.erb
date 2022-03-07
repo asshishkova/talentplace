@@ -1,11 +1,17 @@
-<small class="text-muted">
-Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</small>
-
 <div class="container mt-5 mb-5">
   <div class="flex-space-between container mt-5 mb-5">
   <h1>All the talents</h1>
   </div>
+
+  <%= form_tag talents_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a talent"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
   <div class="container mb-5 p-3 rounded">
     <div class="row my-2">
       <% @talents.each do |talent| %>
@@ -22,7 +28,7 @@ Please note that the data on this page is not real, it is used to demonstrate th
                       <span class="badge rounded-pill bg-light text-dark">#<%= genre.name %></span>
                     <% end %>
                   </small>
-                  <small class="text-muted"><i class="fas fa-map-marker-alt"></i><%= talent.address %></small>
+                  <small class="text-muted"><i class="fas fa-map-marker-alt"></i> <%= talent.address %></small>
                   <small class="text-muted">$<%= talent.price %></small>
                 </div>
               </div>
@@ -32,7 +38,3 @@ Please note that the data on this page is not real, it is used to demonstrate th
     </div>
   </div>
 </div>
-
-<small class="text-muted">
-Please note that the data on this page is not real, it is used to demonstrate the idea of the web-site only, all the rights belong to their owners.
-</small>
