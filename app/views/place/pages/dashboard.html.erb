@@ -36,6 +36,7 @@
               <td><p><%= booking.talent.name %></p></td>
               <td><p><%= booking.date %></p></td>
               <td><p><%= booking.message %></p></td>
+              <td><p><%= booking.status %></p></td>
               <td><%= link_to "Cancel", booking_path(booking), method: :delete, class: "booking_buttons_dashboard_place", data: { confirm: "Are you sure you want to cancel this booking?" } %></td>
             </tr>
           </div>
