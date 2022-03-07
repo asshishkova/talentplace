@@ -1,10 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: %i[show destroy edit update]
 
-  # def index
-  #   @bookings = current_place.bookings
-  # end
-
   def new
     @booking = Booking.new
     @talent = Talent.find(params[:talent_id])
@@ -23,19 +19,16 @@ class BookingsController < ApplicationController
     end
   end
 
-  # def show
-  # end
-
   # def update
   #   @booking.status = params[:status]
   #   @booking.save
-  #   redirect_to bookings_paths
+  #   redirect_to talent_dashboard_path
   # end
 
-  # def destroy
-  #   @booking.destroy
-  #   redirect_to bookings_path
-  # end
+  def destroy
+    @booking.destroy
+    redirect_to place_dashboard_path
+  end
 
   private
 

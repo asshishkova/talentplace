@@ -1,10 +1,6 @@
 class PromotionsController < ApplicationController
   before_action :set_promotion, only: %i[show destroy]
 
-  # def index
-  #   @promotions = current_place.promotions
-  # end
-
   def new
     @promotion = Promotion.new
     @place = Place.find(params[:place_id])
@@ -22,13 +18,10 @@ class PromotionsController < ApplicationController
     end
   end
 
-  # def show
-  # end
-
-  # def destroy
-  #   @promotion.destroy
-  #   redirect_to promotions_path
-  # end
+  def destroy
+    @promotion.destroy
+    redirect_to talent_dashboard_path
+  end
 
   private
 
