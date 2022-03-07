@@ -7,5 +7,8 @@ class Place < ApplicationRecord
   has_many :place_genres
   has_many :genres, through: :place_genres
   has_many :promotions
+
+  validates :photo, presence: true
+
   has_one_attached :photo
 end
