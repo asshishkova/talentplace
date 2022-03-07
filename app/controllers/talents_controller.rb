@@ -4,7 +4,7 @@ class TalentsController < ApplicationController
   def index
     if params[:query].present?
       sql_query = "talents.name ILIKE :query OR address ILIKE :query OR genres.name ILIKE :query"
-      @talents = Talent.joins(:genres).where(sql_query, query: "%#{params[:query]}%")
+      @talents = Talent.joins(:genres).where(sql_query, query: "%#{params[:query]}%").distinct
     else
       @talents = Talent.all
     end

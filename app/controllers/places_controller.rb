@@ -4,7 +4,7 @@ class PlacesController < ApplicationController
   def index
     if params[:query].present?
       sql_query = "title ILIKE :query OR address ILIKE :query OR genres.name ILIKE :query"
-      @places = Place.joins(:genres).where(sql_query, query: "%#{params[:query]}%")
+      @places = Place.joins(:genres).where(sql_query, query: "%#{params[:query]}%").distinct
     else
       @places = Place.all
     end
