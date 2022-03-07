@@ -18,6 +18,11 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @markers = [{
+      lat: @place.latitude,
+      lng: @place.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { place: @place })
+      }]
   end
 
   def edit

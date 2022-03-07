@@ -163,7 +163,7 @@ new_place = Place.new(
   title: 'Wine Tower',
   email: "winetower@mail.com",
   password: '123456',
-  address: 'Tel Aviv, Dizengoff Square'
+  address: 'Tel Aviv, Dizengoff Square 1'
 )
 new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
 new_place.description = "Hi, we are a cute restaurant '#{new_place.title}', we are located in the South of #{new_place.address}."
