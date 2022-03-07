@@ -1,6 +1,7 @@
 <div class="">
   <div class="container mt-5"  >
     <div class="grid">
+
       <div>
         <% if @place.photo.key %>
         <p><%= cl_image_tag @place.photo.key, class: "img-fluid shadow place_profile_pic " %></p>
@@ -15,15 +16,12 @@
         <p class = "pt-3"><%= @place.description %></p>
       </div>
       <div class = "mt-5">
-        <%if current_place %>
          <% website = "#{@place.website}" %>
-        <p class = ""> <%= link_to 'Our website', website, target: "_blank",  class: "purple_pink_btn py-2" %></p>
-        <%elsif current_talent %>
+         <p class = ""> <%= link_to 'Our website', website, target: "_blank",  class: "purple_pink_btn py-2" %></p>
+        <%if current_talent %>
           <div class = "mb-4">
-            <%= link_to "Send a promotion!", new_place_promotion_path(@place), class: "purple_pink_btn py-2" %>
+            <%= render "promotions/form", place: @place, promotion: @promotion %>
           </div>
-            <% website = "#{@place.website}" %>
-            <p class = ""> <%= link_to 'Our website', website, target: "_blank",  class: "purple_pink_btn py-2" %></p>
         <% end %>
         </div>
     </div>

@@ -18,6 +18,7 @@ class PlacesController < ApplicationController
   end
 
   def show
+    @promotion = Promotion.new
     @markers = [{
       lat: @place.latitude,
       lng: @place.longitude,
