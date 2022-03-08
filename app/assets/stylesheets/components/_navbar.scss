@@ -35,5 +35,24 @@
 
 .navbar_profil_picture {
   border-radius: 0px !important;
+  margin-right: 10px;
+}
 
+.dashboard_navbar_btn {
+  padding-right: 10px;
+
+  &:hover {
+      color: #d1d1d1;
+  }
+}
+
+
+.links_blue_to_white {
+  a {
+    color: white;
+  }
+
+  a:hover {
+    color: #d1d1d1;
+  }
 }
