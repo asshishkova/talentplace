@@ -33,6 +33,10 @@
 .dashboard_place_info {
   padding-top: 40px;
   width: 300px;
+
+  a:hover {
+    color: aqua !important;
+  }
 }
 
 .dashboard_place_find_place {

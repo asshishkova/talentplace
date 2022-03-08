@@ -1,5 +1,35 @@
-<%= simple_form_for [talent, booking] do |f| %>
-    <%= f.input :date %>
-    <%= f.input :message %>
-    <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="booking-form">
+    <h1>Book <%= talent.name %></h1>
+    <%= simple_form_for [talent, booking] do |f| %>
+        <%= f.input :date %>
+        <%= f.input :message, as: :text %>
+        <%= f.submit class: "purple_pink_btn"%>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+<%#
+<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form> %>
