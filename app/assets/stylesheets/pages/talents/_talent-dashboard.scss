@@ -3,13 +3,13 @@ h2 {
   font-weight: bold;
 }
 
-.dashboard_talent_row {
+.dashboard_row {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.table_dashboard_talent {
+.table_dashboard {
   width: 95%;
   background-color: #ededed;
   margin-left: 30px;
@@ -21,7 +21,7 @@ div tr{
   border-radius: 10px;
 }
 
-.table_dashboard_talent {
+.table_dashboard {
   td {
     padding: 15px;
   }

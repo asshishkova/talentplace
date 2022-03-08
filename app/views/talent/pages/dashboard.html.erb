@@ -23,9 +23,9 @@
     <small class="text-muted">Here are the bookings I received from the places</small>
     <div>
       <div class="row justify-content-center">
-      <table class = "table_dashboard_talent mt-3">
+      <table class = "table_dashboard mt-3">
           <% @bookings.each do |booking|%>
-            <div class="dashboard_talent_row">
+            <div class="dashboard_row">
               <% if booking.status == 'declined' %>
                 <tr style="background-color:#BBBBBB;">
               <% elsif booking.status == 'confirmed' %>
@@ -56,13 +56,13 @@
     <small class="text-muted">Here are the promotions I sent to the places</small>
     <div>
       <div class="row justify-content-center">
-      <table class = "table_dashboard_talent mt-3">
+      <table class = "table_dashboard mt-3">
           <% @promotions.each do |promotion|%>
-            <div class="dashboard_talent_row">
+            <div class="dashboard_row">
               <tr>
                 <td><%= link_to promotion.place.title, place_path(promotion.place), class: "text-link" %></td>
                 <td><%= promotion.message %></td>
-                <td><%= link_to "Cancel", promotion_path(promotion), method: :delete, class: "bad_btn", data: { confirm: "Are you sure you want to cancel this promotion?" } %></td>
+                <td><%= link_to "x", promotion_path(promotion), method: :delete, class: "btn-ghost", data: { confirm: "Are you sure you want to cancel this promotion?" } %></td>
               </tr>
             </div>
           <% end %>
