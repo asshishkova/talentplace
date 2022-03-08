@@ -4,8 +4,9 @@
   background-position: right center;
   border: none;
   border-radius: 5px;
-  padding: 8px 15px;
   transition: 0.5s;
+  margin: 0px;
+  padding: 10px 15px;
 }
 
 .purple_pink_btn:hover {
@@ -31,3 +32,27 @@
    color: #fff;
    text-decoration: none;
  }
+
+ .text-link {
+   color: black;
+ }
+
+ .text-link:hover {
+  color: black;
+  font-weight: bold;
+}
+
+ .btn-ghost {
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 5px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-ghost:hover {
+  opacity: 1;
+  color: black;
+}
