@@ -13,10 +13,10 @@
           <span class="badge rounded-pill bg-dark">#<%= genre.name %></span>
         <% end %>
         <p class = "pt-3"><%= @place.description %></p>
+         <% website = "#{@place.website}" %>
+         <p class = ""> <%= link_to 'Our website', website, target: "_blank",  class: "bad_btn" %></p>
       </div>
       <div class = "mt-5">
-         <% website = "#{@place.website}" %>
-         <p class = ""> <%= link_to 'Our website', website, target: "_blank",  class: "purple_pink_btn py-2" %></p>
         <%if current_talent %>
           <div class = "mb-4">
             <%= render "promotions/form", place: @place, promotion: @promotion %>
