@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
     <div class = "talent_place_btn">
-      <%= link_to 'TalentPlace', root_path %>
+      <div class = "links_blue_to_white"><%= link_to 'TalentPlace', root_path %></div>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -15,14 +15,14 @@
           <%= render "partials/navbar_signed_in_place" %>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", "#", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }%>
+            <%= link_to "Login", "#", class: "avatar dropdown-toggle dashboard_navbar_btn", id: "navbarDropdown", data: { bs_toggle: "dropdown" }%>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "as a talent", new_talent_session_path, class: "dropdown-item" %>
               <%= link_to "as a place", new_place_session_path, class: "dropdown-item" %>
             </div>
           </li>
           <li class="nav-item">
-            <%= link_to "Sign Up", "#",  class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }%>
+            <%= link_to "Sign Up", "#",  class: "avatar dropdown-toggle dashboard_navbar_btn", id: "navbarDropdown", data: { bs_toggle: "dropdown" }%>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "as a talent", new_talent_registration_path, class: "dropdown-item" %>
               <%= link_to "as a place", new_place_registration_path, class: "dropdown-item" %>
