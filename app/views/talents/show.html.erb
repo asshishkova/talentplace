@@ -1,36 +1,47 @@
-<div class="light-background">
-  <div class="container mt-5 mb-5 p-3"  >
-    <div class="flex-space-between">
+<div class="">
+  <div class="container mt-5"  >
+    <div class="grid_talent_profile">
       <div>
-        <h2><%= @talent.name %></h2>
+        <% if @talent.photo.key %>
+          <p><%= cl_image_tag @talent.photo.key, class: "img-fluid shadow talent_profile_pic" %></p>
+        <% end %>
+      </div>
+      <div class = "profile_talent_info">
+        <h3 class = "h3_profile_talent"><%= @talent.name %></h2>
         <% @talent.genres.each do |genre| %>
           <span class="badge rounded-pill bg-dark">#<%= genre.name %></span>
         <% end %>
-        <p>
-        <p> <i class="fas fa-map-marker-alt"></i> <%= @talent.address %></p>
+        <p> <i class="fas fa-map-marker-alt mt-3"></i> <%= @talent.address %></p>
         <p>$<%= @talent.price %> per hour</p>
         <p><%= @talent.description %></p>
       </div>
-      <% if current_place %>
-        <div>
-          <%= link_to "Book!", new_talent_booking_path(@talent), class: "btn btn-primary" %>
-        </div>
-      <% end %>
+      <div>
+        <% if current_place %>
+          <div>
+            <%= link_to "Book!", new_talent_booking_path(@talent), class: "purple_pink_btn" %>
+          </div>
+        <% end %>
+      </div>
+    <div class = "grid_talent_profile_social_network">
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-spotify"></i>
+      </a>
+      <a href="" class="me-4 text-reset">
+        <i class="fab fa-youtube"></i>
+      </a>
+      <a href="instagram_link" class="me-4 text-reset">
+        <i class="fab fa-instagram"></i>
+      </a>
     </div>
-    <% if @talent.photo.key %>
-      <p><%= cl_image_tag @talent.photo.key, class: "img-fluid bg-white rounded shadow h-100" %></p>
-    <% end %>
-    <% regexp = (@talent.youtube_link.include? "youtu.be") ? 'https:\/\/youtu.be\/(.+)' : 'https:\/\/www\.youtube\.com\/watch\?v=(.+)&ab_channel=.+' %>
-    <% youtube_link = "https://www.youtube.com/embed/#{@talent.youtube_link.gsub(/#{regexp}/, '\1')}" %>
+  </div>
+
     <% instagram_link = "#{@talent.instagram_link}" %>
     <% spotify_link = "#{@talent.spotify_link}" %>
-    <div>
-      <iframe src=<%= youtube_link %>  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <p>You can also see <%= @talent.name%>'s <%= link_to 'instagram', instagram_link, target: "_blank"%> and <%= link_to 'spotify', spotify_link, target: "_blank"%> pages.</p>
+    <% youtube_link = "#{@talent.youtube_link}" %>
+    <%= link_to 'instagram', instagram_link, target: "_blank"%> and <%= link_to 'spotify', spotify_link, target: "_blank"%> and <%= link_to 'youtube', youtube_link, target: "_blank"%> pages.</p>
   <div class="flex-space-between container mt-5 mb-5">
     <div>
-      <%= link_to 'To the list of all the talents', talents_path, class: "btn btn-ghost" %>
+      <%= link_to 'Back to the list', talents_path, class: "bad_btn" %>
     </div>
   </div>
 </div>

@@ -1,0 +1,23 @@
+.grid_talent_profile {
+  display: grid;
+  grid-template-columns: 34% 50% 16%;
+}
+
+.talent_profile_pic {
+  height: 300px;
+  border-radius: 4px;
+}
+
+.profile_talent_info {
+  width: 400px;
+  padding-left: 130px;
+}
+
+.h3_profile_talent {
+  font-weight: bold;
+}
+
+.grid_talent_profile_social_network {
+  display: grid;
+  grid-template-rows: 34% 33% 33%;
+}

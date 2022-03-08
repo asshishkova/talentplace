@@ -1,6 +1,7 @@
 .purple_pink_btn {
   color: #fff !important;
   background: linear-gradient(135deg, #7133c7 0%, #8b2faa 66.25%, #a62b8d 100%);
+  background-position: right center;
   border: none;
   border-radius: 5px;
   padding: 8px 15px;
@@ -8,7 +9,7 @@
 }
 
 .purple_pink_btn:hover {
-  background-position: right center; /* change the direction of the change here */
+  background-size: 200% auto;
   color: #fff;
   text-decoration: none;
 }
