@@ -166,7 +166,7 @@ new_place = Place.new(
   address: 'Tel Aviv, Dizengoff Square 1'
 )
 new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
-new_place.description = "Hi, we are a cute restaurant '#{new_place.title}', we are located in the South of #{new_place.address}."
+new_place.description = "Hi, we are a cute restaurant #{new_place.title}, we are located in the middle of Tel Aviv."
 file = URI.open('https://upload.wikimedia.org/wikipedia/commons/e/ef/Restaurant_N%C3%A4sinneula.jpg')
 new_place.photo.attach(io: file, filename: 'media-cdn.png', content_type: 'image/png')
 new_place.save!
@@ -183,7 +183,7 @@ new_place = Place.new(
   address: 'Ramat Gan, Herzl 4'
 )
 new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
-new_place.description = "Hello, we are '#{new_place.title}', you can easily find us in the South of #{new_place.address}. We have a lot of guests every evening"
+new_place.description = "Hello, we are #{new_place.title}, you can easily find us in Ramat Gan. We have a lot of guests every evening"
 file = URI.open('https://media-cdn.tripadvisor.com/media/photo-s/1a/b8/46/6d/london-stock.jpg')
 new_place.photo.attach(io: file, filename: 'media-cdn.png', content_type: 'image/png')
 new_place.save!
@@ -216,10 +216,10 @@ new_place = Place.new(
   title: 'Bar #1',
   email: "bar1@mail.com",
   password: '123456',
-  address: 'Tel Aviv, Rotshild 13'
+  address: 'Tel Aviv, Shalom Ash 1'
 )
 new_place.website = "https://www.tripadvisor.com/Restaurants-g293984-Tel_Aviv_Tel_Aviv_District.html"
-new_place.description = "'#{new_place.title}' is located in the middle of #{new_place.address} and is full every Friday."
+new_place.description = "'#{new_place.title}' is located in the North of Tel Aviv and is full every Friday."
 file = URI.open('https://www.beachstonecafe.com.au/wp-content/uploads/2022/01/pic-348.jpg')
 new_place.photo.attach(io: file, filename: 'd3aux7tjp119y2.png', content_type: 'image/png')
 new_place.save!
@@ -234,7 +234,7 @@ Booking.create!(
   place: Place.find_by(title: 'Wine Tower'),
   talent: Talent.find_by(name: 'Mary Becker'),
   date: (DateTime.civil_from_format :local, 2022, 3, 30, 20, 30),
-  status: 'pending',
+  status: 'confirmed',
   message: 'please confirm it as soon as possible'
 )
 
@@ -242,7 +242,7 @@ Booking.create!(
   place: Place.find_by(title: 'Wine Tower'),
   talent: Talent.find_by(name: 'Quadro Breeze'),
   date: (DateTime.civil_from_format :local, 2022, 4, 5, 21, 30),
-  status: 'pending',
+  status: 'confirmed',
   message: 'please let us no if you need some special equipment'
 )
 
@@ -250,7 +250,7 @@ Booking.create!(
   place: Place.find_by(title: 'Good Mood'),
   talent: Talent.find_by(name: 'DJ Walter'),
   date: (DateTime.civil_from_format :local, 2022, 4, 1, 22, 0),
-  status: 'pending',
+  status: 'confirmed',
   message: 'can you also play Tango?'
 )
 
@@ -258,7 +258,7 @@ Booking.create!(
   place: Place.find_by(title: 'Good Mood'),
   talent: Talent.find_by(name: 'Pablo Campbell'),
   date: (DateTime.civil_from_format :local, 2022, 3, 20, 19, 0),
-  status: 'pending',
+  status: 'confirmed',
   message: 'looking forward to meet you'
 )
 
@@ -274,7 +274,7 @@ Booking.create!(
   place: Place.find_by(title: 'Good Mood'),
   talent: Talent.find_by(name: 'Mary Becker'),
   date: (DateTime.civil_from_format :local, 2022, 5, 30, 20, 30),
-  status: 'pending',
+  status: 'declined',
   message: 'please do  not be late'
 )
 
@@ -290,7 +290,7 @@ Booking.create!(
   place: Place.find_by(title: 'Villa 7'),
   talent: Talent.find_by(name: 'Matthew Chandler'),
   date: (DateTime.civil_from_format :local, 2022, 4, 10, 21, 30),
-  status: 'pending',
+  status: 'declined',
   message: 'please wear suit if it is possible'
 )
 
@@ -298,15 +298,23 @@ Booking.create!(
   place: Place.find_by(title: 'Villa 7'),
   talent: Talent.find_by(name: 'Quadro Breeze'),
   date: (DateTime.civil_from_format :local, 2022, 5, 5, 20, 0),
-  status: 'pending',
+  status: 'declined',
   message: 'our manager will meet you half an hour before'
+)
+
+Booking.create!(
+  place: Place.find_by(title: 'Villa 7'),
+  talent: Talent.find_by(name: 'Quadro Breeze'),
+  date: (DateTime.civil_from_format :local, 2022, 5, 10, 20, 0),
+  status: 'declined',
+  message: 'maybe you can at this date?'
 )
 
 Booking.create!(
   place: Place.find_by(title: 'Bar #1'),
   talent: Talent.find_by(name: 'Bob Walker'),
   date: (DateTime.civil_from_format :local, 2022, 4, 15, 23, 30),
-  status: 'pending',
+  status: 'confirmed',
   message: 'hope you are able to work till the last client'
 )
 
@@ -314,7 +322,7 @@ Booking.create!(
   place: Place.find_by(title: 'Bar #1'),
   talent: Talent.find_by(name: 'Bob Walker'),
   date: (DateTime.civil_from_format :local, 2022, 4, 17, 23, 30),
-  status: 'pending',
+  status: 'declined',
   message: 'yes, we need you twice :)'
 )
 
