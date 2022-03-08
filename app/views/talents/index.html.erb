@@ -1,35 +1,36 @@
 <div class="container mt-5 mb-5">
-  <div class="flex-space-between container mt-5 mb-5">
-  <h1>All the talents</h1>
+  <h3>All the talents</h3>
+  <div class="flex-space-between mt-1">
+    <%= form_tag talents_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        # class: "form-control",
+        placeholder: "Find a talent"
+      %>
+      <%= submit_tag "Search", class: "btn-ghost" %>
+    <% end %>
   </div>
-
-  <%= form_tag talents_path, method: :get do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Find a talent"
-    %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
 
   <div class="container mb-5 p-3 rounded">
     <div class="row my-2">
       <% @talents.each do |talent| %>
-          <div class="col-12 col-sm-6 mb-4" data-aos="zoom-in">
+          <div class="col-12 col-sm-4 my-2" data-aos="zoom-in">
             <%= link_to talent_path(talent) do %>
               <div class="bg-white rounded shadow h-100">
                 <% if talent.photo.key %>
                   <%= cl_image_tag talent.photo.key, class: "talent-img rounded-top" %>
                 <% end %>
-                <div class="p-3 rounded-bottom d-flex flex-column">
-                  <strong><%= talent.name %> </strong>
-                  <small class="text-muted">
+                <div class="p-3 rounded-bottom d-flex flex-column ">
+                  <span class="text-link"><%= talent.name%> </span>
+                  <div class="text-muted">
                     <% talent.genres.each do |genre| %>
                       <span class="badge rounded-pill bg-light text-dark">#<%= genre.name %></span>
                     <% end %>
-                  </small>
-                  <small class="text-muted"><i class="fas fa-map-marker-alt"></i> <%= talent.address %></small>
-                  <small class="text-muted">$<%= talent.price %></small>
+                  </div>
+                  <div class="flex-space-between mt-1">
+                    <small class="text-muted"><i class="fas fa-map-marker-alt"></i> <%= talent.address %></small>
+                    <small class="text-muted">$<%= talent.price %></small>
+                  </div>
                 </div>
               </div>
             <% end %>
