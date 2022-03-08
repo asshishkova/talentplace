@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn-modal-promotion">
+<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="purple_pink_btn">
   Send a promotion !
 </button>
 <!-- Modal -->
@@ -7,15 +7,13 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Send a promotion!</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <%= simple_form_for [place, promotion] do |f| %>
-          <%= f.input :message %>
-          <div class="btn-modal-promotion">
-            <%= f.submit %>
-          </div>
+          <%= f.input :message, label: false, as: :text %>
+          <%= f.submit class: "purple_pink_btn" %>
         <% end %>
       </div>
     </div>
