@@ -359,7 +359,7 @@ Booking.create!(
 Booking.create!(
   place: Place.find_by(title: 'Villa 7'),
   talent: Talent.find_by(name: 'Karen Revah'),
-  date: (DateTime.civil_from_format :local, 2022, 5, 10, 20, 0),
+  date: (DateTime.civil_from_format :local, 2022, 5, 10, 23, 0),
   status: 'pending',
   message: 'Hi Karen, our manager will meet you half an hour before'
 )
