@@ -62,7 +62,7 @@
               <tr>
                 <td><%= link_to promotion.place.title, place_path(promotion.place), class: "text-link" %></td>
                 <td><%= promotion.message %></td>
-                <td><%= link_to "x", promotion_path(promotion), method: :delete, class: "btn-ghost", data: { confirm: "Are you sure you want to cancel this promotion?" } %></td>
+                <td><%= link_to " x ", promotion_path(promotion), method: :delete, class: "btn-ghost", data: { confirm: "Are you sure you want to cancel this promotion?" } %></td>
               </tr>
             </div>
           <% end %>
