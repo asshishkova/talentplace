@@ -30,6 +30,28 @@ end
 puts 'Genres are created'
 
 new_talent = Talent.new(
+  name: 'Karen Revah',
+  email: 'karenrevah@gmail.com',
+  password: '123456',
+  address: 'Tel Aviv',
+  price: 150,
+  instagram_link: 'https://www.instagram.com/guitar_reels/',
+  youtube_link: 'https://youtu.be/z2ZQs9fxJZc',
+  spotify_link: 'https://open.spotify.com/artist/0oBiYchunKTMDesVICwrvL'
+)
+new_talent.description = "Hello, I am Karen from Tel Aviv. I play guitar and can improve your place's atmosphere with my nice music. Listen to my covers on Spotify!"
+file = URI.open('https://res.cloudinary.com/dz1isx4ky/image/upload/v1/production/czkdnoqp2q8s2c2jke38c50wekdx')
+new_talent.photo.attach(io: file, filename: 'Karen.png', content_type: 'image/png')
+new_talent.save!
+puts "#{new_talent.name} created"
+
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'jazz'))
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'guitar'))
+TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: 'covers'))
+
+puts "TalentGenres for #{new_talent.name} created"
+
+new_talent = Talent.new(
   name: 'Matthew Chandler',
   email: 'chandler@mail.com',
   password: '123456',
@@ -334,6 +356,22 @@ Booking.create!(
   message: 'please prepare some lady gaga covers'
 )
 
+Booking.create!(
+  place: Place.find_by(title: 'Villa 7'),
+  talent: Talent.find_by(name: 'Karen Revah'),
+  date: (DateTime.civil_from_format :local, 2022, 5, 10, 20, 0),
+  status: 'pending',
+  message: 'Hi Karen, our manager will meet you half an hour before'
+)
+
+Booking.create!(
+  place: Place.find_by(title: 'Bar #1'),
+  talent: Talent.find_by(name: 'Karen Revah'),
+  date: (DateTime.civil_from_format :local, 2022, 4, 16, 23, 30),
+  status: 'pending',
+  message: 'hope you are able to work till the last client'
+)
+
 puts "Bookings are created"
 
 Promotion.create!(
@@ -393,13 +431,19 @@ Promotion.create!(
 Promotion.create!(
   talent: Talent.find_by(name: 'Quadro Breeze'),
   place: Place.find_by(title: 'Villa 7'),
-  message: 'Hi, we are professionsl musicians and performers'
+  message: 'Hi, we are professional musicians and performers'
 )
 
 Promotion.create!(
   talent: Talent.find_by(name: 'Quadro Breeze'),
   place: Place.find_by(title: 'Wine Tower'),
   message: 'We are sure that our talents will impress you'
+)
+
+Promotion.create!(
+  talent: Talent.find_by(name: 'Karen Revah'),
+  place: Place.find_by(title: 'Villa 7'),
+  message: 'Hi, I would be happy to play for you'
 )
 
 puts "Promotions are created"
