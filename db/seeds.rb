@@ -31,7 +31,7 @@ puts 'Genres are created'
 
 new_talent = Talent.new(
   name: 'Karen Revah',
-  email: 'karenrevah@gmail.com',
+  email: 'karen.revah@gmail.com',
   password: '123456',
   address: 'Tel Aviv',
   price: 150,
