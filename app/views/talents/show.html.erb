@@ -41,9 +41,9 @@
     </div>
   </div>
   <div class="flex-space-between mt-5 mb-5">
-    <div>
-      <%= link_to 'Back to the list', talents_path, class: "bad_btn" %>
-    </div>
+    <%= link_to talents_path do %>
+      <button class="bad_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> All Talents</button>
+    <% end %>
   </div>
 </div>
 </div>
