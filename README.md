@@ -6,4 +6,5 @@ To be updated.
 - Fix the youtube bug
 - Change the sign up login
 - Fix style bugs
-- Deploy to Heroku
+- Deploy to Heroku *website link with the application will be here soon*
+- Record the video about the application
