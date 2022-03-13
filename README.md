@@ -3,7 +3,7 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 To be updated.
 
 ### Todo
-- Change the sign up login
+- Change the sign up logic
 - Fix style bugs
 - Deploy to Heroku — **a link to the application website will be here soon**
 - Record the video about the application
