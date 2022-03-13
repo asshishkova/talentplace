@@ -3,7 +3,6 @@ Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/ra
 To be updated.
 
 ### Todo
-- Fix the youtube bug
 - Change the sign up login
 - Fix style bugs
 - Deploy to Heroku — **a link to the application website will be here soon**
