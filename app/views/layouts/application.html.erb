@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>TalentPlace</title>
-    <%# . Express your talent in public. Find a musician for you business %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,9 +15,11 @@
 
   <body>
     <%= render "partials/navbar" %>
-    <%= yield %>
-    <%= render "partials/footer" %>
+    <div style="padding-top: 30px">
+      <%= yield %>
+    </div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <%= render "partials/footer" %>
   </body>
 </html>
