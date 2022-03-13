@@ -1,9 +1,9 @@
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
-To be updated.
+You can find the current version on
+https://asshishkova-talent-place.herokuapp.com/
+and log in
+- as a place: email `goodmood@mail.com` and password `123456`
+- as a talent: email `pablo@mail.com` and password `123456`
 
-### Todo
-- Change the sign up logic
-- Fix style bugs
-- Deploy to Heroku — **a link to the application website will be here soon**
-- Record the video about the application
+To be updated.
