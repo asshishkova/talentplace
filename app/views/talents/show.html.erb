@@ -11,15 +11,23 @@
         <% @talent.genres.each do |genre| %>
           <span class="badge rounded-pill bg-dark">#<%= genre.name %></span>
         <% end %>
-        <p> <i class="fas fa-map-marker-alt mt-3"></i> <%= @talent.address %></p>
-        <p>$<%= @talent.price %> per hour</p>
+        <% if  @talent.address %>
+          <p> <i class="fas fa-map-marker-alt mt-3"></i> <%= @talent.address %></p>
+        <% end %>
+        <% if @talent.price %>
+          <p>$<%= @talent.price %> per hour</p>
+        <% end %>
         <p class = "talent_description_profil"><%= @talent.description %></p>
         <div class = "mt-1 talent_social_network">
-          <%= link_to @talent.instagram_link, target: "_blank" do  %>
-          <i class="fab fa-instagram text-link"></i>
+          <% if @talent.instagram_link %>
+            <%= link_to @talent.instagram_link, target: "_blank" do  %>
+            <i class="fab fa-instagram text-link"></i>
+            <% end %>
           <% end %>
-          <%= link_to @talent.spotify_link, target: "_blank" do  %>
-          <i class="fab fa-spotify text-link"></i>
+          <% if @talent.spotify_link %>
+            <%= link_to @talent.spotify_link, target: "_blank" do  %>
+            <i class="fab fa-spotify text-link"></i>
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -29,21 +37,21 @@
           </div>
         <% end %>
       </div>
-    <% regexp = (@talent.youtube_link.include? "youtu.be") ? 'https:\/\/youtu.be\/(.+)' : 'https:\/\/www\.youtube\.com\/watch\?v=(.+)&ab_channel=.+' %>
-    <% youtube_link = "https://www.youtube.com/embed/#{@talent.youtube_link.gsub(/#{regexp}/, '\1')}" %>
-    <% instagram_link = "#{@talent.instagram_link}" %>
-    <% spotify_link = "#{@talent.spotify_link}" %>
     <br>
-  <div class = "mt-4">
-    <h3 class = "h3_youtube_video mt-8"><strong>Portfolio</strong></h3>
-    <div>
-      <iframe src=<%= youtube_link %>  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <% if @talent.youtube_link %>
+      <div class = "mt-4">
+        <% regexp = (@talent.youtube_link.include? "youtu.be") ? 'https:\/\/youtu.be\/(.+)' : 'https:\/\/www\.youtube\.com\/watch\?v=(.+)&ab_channel=.+' %>
+        <% youtube_link = "https://www.youtube.com/embed/#{@talent.youtube_link.gsub(/#{regexp}/, '\1')}" %>
+        <h3 class = "h3_youtube_video mt-8"><strong>Video</strong></h3>
+        <div>
+          <iframe src=<%= youtube_link %>  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    <% end %>
+    <div class="flex-space-between mt-5 mb-5">
+      <%= link_to talents_path do %>
+        <button class="bad_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> All Talents</button>
+      <% end %>
     </div>
   </div>
-  <div class="flex-space-between mt-5 mb-5">
-    <%= link_to talents_path do %>
-      <button class="bad_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> All Talents</button>
-    <% end %>
-  </div>
-</div>
 </div>
