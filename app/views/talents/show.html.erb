@@ -7,7 +7,7 @@
         <% end %>
       </td>
       <td class="col-md-5 p-3">
-        <h3 class = "h3_profile_talent"><%= @talent.name %></h3>
+        <h3 class><%= @talent.name %></h3>
         <% @talent.genres.each do |genre| %>
           <span class="badge rounded-pill bg-dark">#<%= genre.name %></span>
         <% end %>
@@ -47,7 +47,7 @@
       </div>
     </div>
   <% end %>
-  <div class="flex-space-between mt-5 mb-5">
+  <div class="my-5">
     <%= link_to talents_path do %>
       <button class="bad_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> All Talents</button>
     <% end %>

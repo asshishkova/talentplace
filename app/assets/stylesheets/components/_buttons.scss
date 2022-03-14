@@ -15,7 +15,10 @@
   text-decoration: none;
 }
 
-.bad_btn {background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)}
+.bad_btn {
+  background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)
+}
+
 .bad_btn {
    margin: 0px;
    padding: 6px 12px;
@@ -28,7 +31,7 @@
  }
 
  .bad_btn:hover {
-   background-position: right center; /* change the direction of the change here */
+   background-position: right center;
    color: #fff;
    text-decoration: none;
  }
