@@ -2,8 +2,10 @@
 https://asshishkova-talent-place.herokuapp.com/**
 
 and log in
-- as a place: email `goodmood@mail.com`, password `123456`
-- as a talent: email `pablo@mail.com`, password `123456`
+- as a talent: email `talent1@mail.com`, password `123456`
+- as a place: email `place1@mail.com`, password `123456`
+
+Instead of 1 you and write any integer from 1 to 18 in talent's email and from 1 to 9 in place's email.
 
 To be updated.
 
