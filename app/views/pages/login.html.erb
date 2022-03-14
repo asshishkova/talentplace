@@ -1,4 +1,11 @@
-<h3 class="mt-5 ms-5">Please log in:</h3>
-
-<h3 class="m-3">>> <%= link_to 'as a place (cafe, restaurant, bar)', new_place_session_path, class: "text-link" %></h2>
-<h3 class="m-3">>> <%= link_to 'as a talent (singer, musician, DJ)', new_talent_session_path, class: "text-link" %></h2>
+<div class="mt-5 ms-5">
+  <% if current_place %>
+    <h3>You are logged in as <%= current_place.title %> </h3>
+  <% elsif current_talent %>
+    <h3>You are logged in as <%= current_talent.name %> </h3>
+  <% else %>
+    <h3>Please log in:</h3>
+    <h3 class="m-3">>> <%= link_to 'as a talent (singer, musician, DJ)', new_talent_session_path, class: "text-link" %></h2>
+    <h3 class="m-3">>> <%= link_to 'as a place (cafe, restaurant, bar)', new_place_session_path, class: "text-link" %></h2>
+  <% end %>
+</div>

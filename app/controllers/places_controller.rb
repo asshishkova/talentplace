@@ -1,5 +1,6 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: %i[show edit update]
+  skip_before_action :authenticate!, only: :index
 
   def index
     if params[:query].present?
