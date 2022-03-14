@@ -29,6 +29,11 @@
       </td>
     </tr>
   </table>
+  <div class="flex-space-between mt-5 mb-5">
+    <%= link_to places_path do %>
+      <button class="bad_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> All Places</button>
+    <% end %>
+  </div>
   <div style="width: 100%; height: 600px;"
     data-controller="mapbox"
     data-mapbox-markers-value="<%= @markers.to_json %>"
