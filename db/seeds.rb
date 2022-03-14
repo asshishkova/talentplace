@@ -43,7 +43,7 @@ puts "Creating Talents"
     email: "talent#{i}@mail.com",
     password: '123456',
     address: cities.sample,
-    price: 100 + 10 * rand(i + 1),
+    price: 100 + (10 * rand(i + 1)),
     instagram_link: "https://www.instagram.com/#{instagrams.sample}",
     youtube_link: "https://youtu.be/#{youtubes.sample}",
     spotify_link: "https://open.spotify.com/playlist/#{spotifies.sample}"
