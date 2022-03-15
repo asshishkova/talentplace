@@ -7,6 +7,8 @@ and log in
 
 Instead of 1 you and write any integer from 1 to 18 in talent's email and from 1 to 9 in place's email.
 
+**Do not forget to check the Dashboard ;)**
+
 To be updated.
 
 _Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team._
