@@ -7,7 +7,7 @@ class PlacesController < ApplicationController
       sql_query = "title ILIKE :query OR address ILIKE :query OR genres.name ILIKE :query"
       @places = Place.joins(:genres).where(sql_query, query: "%#{params[:query]}%").distinct
     else
-      @places = Place.all
+      @places = Place.all.order(updated_at: :desc)
     end
     @markers = @places.geocoded.map do |place|
       {

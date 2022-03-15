@@ -7,7 +7,7 @@ class TalentsController < ApplicationController
       sql_query = "talents.name ILIKE :query OR address ILIKE :query OR genres.name ILIKE :query"
       @talents = Talent.joins(:genres).where(sql_query, query: "%#{params[:query]}%").distinct
     else
-      @talents = Talent.all
+      @talents = Talent.all.order(updated_at: :desc)
     end
   end
 
