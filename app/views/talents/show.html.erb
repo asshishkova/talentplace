@@ -7,7 +7,14 @@
         <% end %>
       </td>
       <td class="col-md-5 p-3">
-        <h3 class><%= @talent.name %></h3>
+        <div class="flex-space-between">
+          <h3 class><%= @talent.name %></h3>
+          <% if current_talent && current_talent.id == @talent.id  %>
+            <%= link_to edit_talent_path(current_talent) do %>
+              <button class="btn-ghost mt-3">edit profile</button>
+            <% end %>
+          <% end %>
+        </div>
         <% @talent.genres.each do |genre| %>
           <span class="badge rounded-pill bg-dark">#<%= genre.name %></span>
         <% end %>
@@ -49,7 +56,7 @@
   <% end %>
   <div class="my-5">
     <%= link_to talents_path do %>
-      <button class="bad_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> All Talents</button>
+      <button class="black_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> All Talents</button>
     <% end %>
   </div>
 </div>

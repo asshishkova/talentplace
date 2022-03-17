@@ -1,6 +1,7 @@
 <% if current_talent && @talent && @talent.id == current_talent.id %>
   <%= render 'form' %>
 <% else %>
-  <p>This page is not available</p>
-  <%= link_to "Back to the homepage", root_path, class: "btn btn-flat" %>
+  <p class="m-5">This page is not available</p>
+
+ <%= link_to "Homepage", root_path, class: "purple_pink_btn m-5" %>
 <% end %>

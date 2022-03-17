@@ -7,7 +7,7 @@
           <small class="text-muted"><%= current_talent.description%></small>
           <br>
           <%= link_to edit_talent_path(current_talent) do %>
-             <button class="btn-ghost mt-3">edit my profile</button>
+             <button class="btn-ghost mt-3">edit profile</button>
           <% end %>
       </td>
       <td class="col-md-3 p-3">
@@ -38,7 +38,7 @@
                   <td><%= booking.message %></td>
                   <% if booking.status == 'pending' %>
                     <td><%= link_to "confirm", booking_path(booking, status: 'confirmed'), method: :patch, class: "purple_pink_btn"%></td>
-                    <td><%= link_to "decline", booking_path(booking, status: 'declined'), method: :patch, class: "bad_btn"%></td>
+                    <td><%= link_to "decline", booking_path(booking, status: 'declined'), method: :patch, class: "black_btn"%></td>
                   <% else  %>
                     <td><%= booking.status %></td>
                     <td><%= link_to "change", booking_path(booking, status: 'pending'), method: :patch, class: "btn-ghost"%></td>

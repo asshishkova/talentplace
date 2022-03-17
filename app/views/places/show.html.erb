@@ -7,7 +7,14 @@
         <% end %>
       </td>
       <td class="col-md-5 p-3">
-        <h3 class><%= @place.title %></h3>
+        <div class="flex-space-between">
+          <h3><%= @place.title %></h3>
+          <% if current_place && current_place.id == @place.id  %>
+            <%= link_to edit_place_path(current_place) do %>
+              <button class="btn-ghost mt-3">edit profile</button>
+            <% end %>
+          <% end %>
+        </div>
         <% @place.genres.each do |genre| %>
           <span class="badge rounded-pill bg-dark">#<%= genre.name %></span>
         <% end %>
@@ -17,7 +24,7 @@
         <p class = "talent_description_profil"><%= @place.description %></p>
         <% if @place.website %>
           <% website = "#{@place.website}" %>
-          <p> <%= link_to 'Our website', website, target: "_blank",  class: "btn-ghost" %></p>
+          <p> <%= link_to 'Website', website, target: "_blank",  class: "black_btn" %></p>
         <% end %>
       </td>
       <td class="col-md-3 p-3">
@@ -31,7 +38,7 @@
   </table>
   <div class="my-5">
     <%= link_to places_path do %>
-      <button class="bad_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> All Places</button>
+      <button class="black_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> All Places</button>
     <% end %>
   </div>
   <div style="width: 100%; height: 600px;"
