@@ -6,7 +6,7 @@ class Place < ApplicationRecord
   has_many :bookings
   has_many :place_genres
   has_many :genres, through: :place_genres
-  has_many :promotions
+  has_many :promotions, dependent: :destroy
 
   validates :photo, presence: true
 

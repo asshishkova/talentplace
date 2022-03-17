@@ -5,7 +5,7 @@ class Talent < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :availabilities
   has_many :bookings
-  has_many :promotions
+  has_many :promotions, dependent: :destroy
   has_many :talent_genres
   has_many :genres, through: :talent_genres
 

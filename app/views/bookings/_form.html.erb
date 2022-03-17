@@ -2,7 +2,7 @@
   <div class="booking-form">
     <h1>Book <%= talent.name %></h1>
     <% if talent.photo.key %>
-      <p><%= cl_image_tag talent.photo.key, class: " shadow talent_profile_pic mt-3" %></p>
+      <p><%= cl_image_tag talent.photo.key, class: "w-100 rounded shadow" %></p>
     <% end %>
     <%= simple_form_for [talent, booking] do |f| %>
         <%= f.input :date %>
