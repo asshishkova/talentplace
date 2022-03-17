@@ -8,7 +8,7 @@
       </td>
       <td class="col-md-5 p-3">
         <div class="flex-space-between">
-          <h3 class><%= @talent.name %></h3>
+          <h3><%= @talent.name %></h3>
           <% if current_talent && current_talent.id == @talent.id  %>
             <%= link_to edit_talent_path(current_talent) do %>
               <button class="btn-ghost mt-3">edit profile</button>
