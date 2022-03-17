@@ -1,11 +1,15 @@
-<div class="mt-5 ms-5">
-  <% if current_place %>
-    <h3>You are logged in as <%= current_place.title %> </h3>
-  <% elsif current_talent %>
-    <h3>You are logged in as <%= current_talent.name %> </h3>
-  <% else %>
-    <h3>Please log in:</h3>
-    <h3 class="m-3">>> <%= link_to 'as a talent (singer, musician, DJ)', new_talent_session_path, class: "text-link" %></h2>
-    <h3 class="m-3">>> <%= link_to 'as a place (cafe, restaurant, bar)', new_place_session_path, class: "text-link" %></h2>
-  <% end %>
+<div class="home-banner">
+  <%= image_tag("places/p10.jpeg", class: "banner-image", alt: "banner-img") %>
+  <div class="over-image m-5">
+    <% if current_place %>
+      <h3>You are logged in as <%= current_place.title %> </h3>
+    <% elsif current_talent %>
+      <h3>You are logged in as <%= current_talent.name %> </h3>
+    <% else %>
+      <h3>Please log in</h3>
+      <h3 class="m-5">as a <%= link_to 'talent', new_talent_session_path, class: "purple_pink_btn" %> (singer, musician, DJ)</h2>
+      <h3>or</h3>
+      <h3 class="m-5">as a <%= link_to 'place', new_place_session_path, class: "purple_pink_btn" %> (cafe, restaurant, bar)</h2>
+    <% end %>
+  </div>
 </div>
