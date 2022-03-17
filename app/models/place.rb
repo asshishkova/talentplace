@@ -3,10 +3,10 @@ class Place < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :bookings
-  has_many :place_genres
-  has_many :genres, through: :place_genres
-  has_many :promotions, dependent: :destroy
+  has_many :bookings, dependent: :delete_all
+  has_many :place_genres, dependent: :delete_all
+  has_many :genres, through: :place_genres, dependent: :delete_all
+  has_many :promotions, dependent: :delete_all
 
   validates :photo, presence: true
 

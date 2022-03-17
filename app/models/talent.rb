@@ -4,9 +4,9 @@ class Talent < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :availabilities
-  has_many :bookings
-  has_many :promotions, dependent: :destroy
-  has_many :talent_genres
+  has_many :bookings, dependent: :delete_all
+  has_many :promotions, dependent: :delete_all
+  has_many :talent_genres, dependent: :delete_all
   has_many :genres, through: :talent_genres
 
   validates :photo, presence: true
