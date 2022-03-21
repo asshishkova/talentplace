@@ -1,6 +1,5 @@
 // Specific CSS for your home-page
 .home-banner{
-    // background-image: url('https://media.istockphoto.com/photos/concert-stage-on-rock-festival-music-instruments-silhouettes-picture-id1199243596?s=612x612');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -11,17 +10,21 @@
     justify-content: center;
     flex-direction: column;
     width: 100%;
-
     img {
       height: 100%;
       object-fit: cover;
     }
+    position: relative;
   }
 
 .over-image{
   position: absolute;
+  text-align: center;
   color:aliceblue;
-  width: 90%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
   text-shadow: 2px 2px #7133c7;
 }
 
