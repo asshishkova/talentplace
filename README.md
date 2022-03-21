@@ -1,5 +1,5 @@
 **You can find the current version on
-https://asshishkova-talent-place.herokuapp.com/**
+https://asshishkova-talentplace.herokuapp.com/**
 
 and log in
 - as a talent: email `talent1@mail.com`, password `123456`
