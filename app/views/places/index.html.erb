@@ -15,7 +15,7 @@
   <div class="container mb-5 p-3 rounded">
     <div class="row my-2">
       <% @places.each do |place| %>
-          <div class="col-12 col-sm-4 my-2" data-aos="zoom-in">
+          <div class="col-12 col-sm-6 col-md-4 my-2" data-aos="zoom-in">
             <%= link_to place_path(place) do %>
               <div class="bg-white rounded shadow h-100">
                 <% if place.photo.key %>
