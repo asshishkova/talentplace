@@ -33,7 +33,7 @@ cities = ["Bat Yam", "Givatayim", "Haifa", "Herzliya", "Holon", "Nes Ziona", "Ne
 instagrams = ['music.tlv/', 'applemusic/']
 youtubes = ['aHjpOzsQ9YI', 'WJ3-F02-F_Y', '2CkB4a0A7cQ']
 spotifies = ['4RkDMdAFmxTp2E9FsMRq0R', '2OZVlENh6kAfqpRyPIPyl7']
-names = %w[Jessie Marion Alva Cleo Frankie Hollis Sammie Jamie Kris Robbie Tracy Merrill Noel Johnnie Ariel Jan]
+names = %w[Jessie Marion Alva Cleo Frankie Hollis Sammie Jamie Kris Robbie Tracy Merrill Noel Johnnie Ariel Jan Finley Justice]
 
 puts "Creating Talents"
 
@@ -52,7 +52,7 @@ puts "Creating Talents"
   file = File.open("#{Rails.root}/app/assets/images/talents/t#{i + 1}.jpeg")
   new_talent.photo.attach(io: file, filename: 'talent.png', content_type: 'image/png')
   new_talent.save!
-
+  names.delete(new_talent.name)
   puts "#{new_talent.name} created"
   genres.sample(2).each do |genre_name|
     TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: genre_name))
@@ -69,7 +69,7 @@ puts 'Talents are created'
     address: cities.sample
   )
   new_place.website = "https://www.tripadvisor.com/Restaurants-g293977-Israel.html"
-  new_place.description = "Hi, we are cute restaurant '#{new_place.title}', located in the middle of #{new_place.address}. Looking for a talent to make our guests happy!"
+  new_place.description = "Hi, we are a cute restaurant located in the middle of #{new_place.address}. Looking for a talent to make our guests happy!"
   file = File.open("#{Rails.root}/app/assets/images/places/p#{i + 1}.jpeg")
   new_place.photo.attach(io: file, filename: 'place.png', content_type: 'image/png')
   new_place.save!
@@ -77,6 +77,7 @@ puts 'Talents are created'
   genres.sample(2).each do |genre_name|
     PlaceGenre.create!(place: new_place, genre: Genre.find_by(name: genre_name))
   end
+  cities.delete(new_place.address)
   puts "PlacesGenres for #{new_place.title} created"
 end
 puts 'Places are created'
