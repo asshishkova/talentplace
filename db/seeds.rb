@@ -63,7 +63,7 @@ puts 'Talents are created'
 
 9.times do |i|
   new_place = Place.new(
-    title: "#{Faker::Tea.variety} #{Faker::Food.ingredient}",
+    title: Faker::Tea.variety,
     email: "place#{i + 1}@mail.com",
     password: '123456',
     address: cities.sample
