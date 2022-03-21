@@ -5,7 +5,7 @@ and log in
 - as a talent: email `talent1@mail.com`, password `123456`
 - as a place: email `place1@mail.com`, password `123456`
 
-Instead of 1 you and write any integer from 1 to 18 in talent's email and from 1 to 9 in place's email.
+Instead of 1 you and can choose any integer from 1 to 18 in talent's email and from 1 to 9 in place's email.
 
 **Do not forget to check the Dashboard ;)**
 
