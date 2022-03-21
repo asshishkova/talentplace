@@ -40,7 +40,7 @@ puts "Creating Talents"
 18.times do |i|
   new_talent = Talent.new(
     name: "#{names.sample} #{Faker::Name.last_name}",
-    email: "talent#{i}@mail.com",
+    email: "talent#{i + 1}@mail.com",
     password: '123456',
     address: cities.sample,
     price: 100 + (10 * rand(i + 1)),
