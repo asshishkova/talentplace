@@ -1,5 +1,5 @@
-<%= link_to "Dashboard", talent_dashboard_path, class: "dashboard_navbar_btn" %>
-<%= link_to "Profile", talent_path(current_talent), class: "dashboard_navbar_btn mx-3" %>
+<%= link_to "Dashboard", talent_dashboard_path, class: "dashboard_navbar_btn me-3" %>
+<%= link_to "Profile", talent_path(current_talent), class: "dashboard_navbar_btn me-3" %>
 <div class="nav-item dropdown">
   <%= cl_image_tag current_talent.photo.key, class: "avatar dropdown-toggle navbar_profil_picture", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
