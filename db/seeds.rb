@@ -63,7 +63,7 @@ puts 'Talents are created'
 
 9.times do |i|
   new_place = Place.new(
-    title: Faker::Restaurant.name,
+    title: Faker::Food.dish,
     email: "place#{i + 1}@mail.com",
     password: '123456',
     address: cities.sample
@@ -83,7 +83,7 @@ end
 puts 'Places are created'
 
 booking_messages = ['looking forward to meeting you', 'please come half an hour before', 'our manager will meet you']
-booking_status = ['confirmed', 'declined', 'pending']
+booking_status = ['confirmed', 'confirmed', 'confirmed', 'pending', 'pending', 'declined']
 
 Place.all.each do |place|
   Talent.all.sample(3).each do |talent|
