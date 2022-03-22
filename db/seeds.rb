@@ -39,7 +39,7 @@ puts "Creating Talents"
 
 18.times do |i|
   new_talent = Talent.new(
-    name: "#{names.sample} #{Faker::Name.last_name}",
+    name: "#{names.pop} #{Faker::Name.last_name}",
     email: "talent#{i + 1}@mail.com",
     password: '123456',
     address: cities.sample,
@@ -52,7 +52,6 @@ puts "Creating Talents"
   file = File.open("#{Rails.root}/app/assets/images/talents/t#{i + 1}.jpeg")
   new_talent.photo.attach(io: file, filename: 'talent.png', content_type: 'image/png')
   new_talent.save!
-  names.delete(new_talent.name)
   puts "#{new_talent.name} created"
   genres.sample(2).each do |genre_name|
     TalentGenre.create!(talent: new_talent, genre: Genre.find_by(name: genre_name))
