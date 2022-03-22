@@ -15,11 +15,11 @@
           <% @bookings.each do |booking|%>
             <div class="dashboard_row">
               <% if booking.status == 'declined' %>
-                <tr style="background-color:#BBBBBB;">
+                <tr style="background-color: #BBBBBB;">
               <% elsif booking.status == 'confirmed' %>
-                <tr style="background-color:#D488FF;">
+                <tr style="background-color: #D488FF;">
               <% else %>
-                <tr>
+                <tr style="background-color: #EDEDED;">
               <% end %>
                   <td>
                     <%= link_to place_path(booking.place), class: "text-link" do %>

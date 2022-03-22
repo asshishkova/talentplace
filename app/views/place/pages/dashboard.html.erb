@@ -20,7 +20,7 @@
               <% elsif booking.status == 'confirmed' %>
                 <tr style="background-color:#D488FF;">
               <% else %>
-                <tr>
+                <tr style="background-color: #EDEDED;>
               <% end %>
                 <td>
                     <%= link_to talent_path(booking.talent), class: "text-link" do %>
