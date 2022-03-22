@@ -1,7 +1,9 @@
 <div class="container my-5">
-  <h3><%= current_place.title%></h3>
+  <h3><%= link_to current_place.title, place_path(current_place), class: "text-link"%></h3>
   <div class="flex-space-between">
-    <%= cl_image_tag current_place.photo.key, class: "avatar-large rounded shadow m-3"%>
+    <%= link_to place_path(current_place) do %>
+      <%= cl_image_tag current_place.photo.key, class: "avatar-large rounded shadow m-3"%>
+    <% end %>
     <%= link_to talents_path do %>
       <button class="purple_pink_btn m-3">Find a talent!</button>
     <% end %>
