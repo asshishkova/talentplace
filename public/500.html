@@ -1,52 +1,113 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>We're sorry, but something went wrong (500)</title>
+  <title>Internal Server Error (500)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-.internalServerError{
-  font-family:tahoma;
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  padding:90px 80px;
-  background-image:linear-gradient(to top left,rgba(253,29,29,.8),#8B2FAA),url('https://images.unsplash.com/photo-1508778552286-12d4c6007799?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position:center;
-  border-radius:10%;
-  color:white;
-}
-
-.internalServerError--header{
-  font-size:7rem;
-  font-weight:bolder;
-}
-
-.internalServerError--body{
-  font-size: 2rem;
-  font-weight:lighter;
-}
-
-.link_error_500 {
-  font-size: 16px;
-}
-
+    body{
+      margin:0;
+      padding:0;
+      font-family: 'Tomorrow', sans-serif;
+      height:100vh;
+    background-image: linear-gradient(to top, #2e1753, #1f1746, #131537, #0d1028, #050819);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      overflow:hidden;
+    }
+    .purple_pink_btn {
+      color: #fff !important;
+      background: linear-gradient(135deg, #7133c7 0%, #8b2faa 66.25%, #a62b8d 100%);
+      background-position: right center;
+      border: none;
+      border-radius: 5px;
+      transition: 0.5s;
+      margin: 0px;
+      padding: 6px 12px;
+      text-decoration: none;
+    }
+    .purple_pink_btn:hover {
+      background-size: 200% auto;
+      color: #fff;
+      text-decoration: none;
+    }
+    .text{
+      position:absolute;
+      top:10%;
+      color:#fff;
+      text-align:center;
+    }
+    h1{
+      font-size:50px;
+    }
+    .star{
+      position:absolute;
+      width:2px;
+      height:2px;
+      background:#fff;
+      right:0;
+      animation:starTwinkle 3s infinite linear;
+    }
+    .astronaut img{
+      width:100px;
+      position:absolute;
+      top:55%;
+      animation:astronautFly 6s infinite linear;
+    }
+    @keyframes astronautFly{
+      0%{
+        left:-100px;
+      }
+      25%{
+        top:50%;
+        transform:rotate(30deg);
+      }
+      50%{
+        transform:rotate(45deg);
+        top:55%;
+      }
+      75%{
+        top:60%;
+        transform:rotate(30deg);
+      }
+      100%{
+        left:110%;
+        transform:rotate(45deg);
+      }
+    }
+    @keyframes starTwinkle{
+      0%{
+        background:rgba(255,255,255,0.4);
+      }
+      25%{
+        background:rgba(255,255,255,0.8);
+      }
+      50%{
+      background:rgba(255,255,255,1);
+      }
+      75%{
+        background:rgba(255,255,255,0.8);
+      }
+      100%{
+        background:rgba(255,255,255,0.4);
+      }
+    }
   </style>
 </head>
 
 <body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-  <div class="internalServerError">
-    <div class="internalServerError--header">
-      Error  500
-    </div>
-    <div class="internalServerError--body">
-      <p>We had an internal problem</p>
-      <p>Dont worry - We are on it</p>
-      <a href="/" class="link_error_500"> Go back home</a>
-    </div>
+  <!-- This file lives in public/404.html -->
+  <div class="text">
+    <div>ERROR</div>
+    <h1>500</h1>
+    <hr>
+    <div>Internal Server Error</div>
+    <hr>
+    <h3><a class="purple_pink_btn" href="/">homepage</a></h3>
+  </div>
+
+  <div class="astronaut">
+    <img src="https://images.vexels.com/media/users/3/152639/isolated/preview/506b575739e90613428cdb399175e2c8-space-astronaut-cartoon-by-vexels.png" alt="" class="src">
   </div>
 </body>
 </html>
