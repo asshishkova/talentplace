@@ -22,6 +22,9 @@ div tr{
 }
 
 .table_dashboard {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
   td {
     padding: 15px;
   }
